@@ -66,9 +66,3 @@ def checkPlayerRecord(name): # {
     else:
         return False
 # }
-
-addPlayerRecord("D", "Rogue", "1")
-addPlayerRecord("B", "Barb", "2")
-addPlayerRecord("A", "Cleric", 3)
-deletePlayerRecord("Ai")
-
