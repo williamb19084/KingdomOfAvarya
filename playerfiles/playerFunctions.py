@@ -2,7 +2,7 @@
 import json
 
 # Adds a player to the Player.json file. The player can not already be in the file
-def addPlayerRecord(name, player_class, country): # {
+def addPlayerRecord(name, player_class, country, alignment, deity = None): # {
   
     # Checks if player is in the file
     if checkPlayerRecord(name):
@@ -10,7 +10,13 @@ def addPlayerRecord(name, player_class, country): # {
     
     players_json = readPlayerFile()
 
-    data = [player_class, country]
+    data = {
+      "class" : player_class, 
+      "country" :country, 
+      "alignment" : alignment, 
+      "deity" : deity
+      }
+
     players_json[name] = data
     
     writePlayerFile(players_json)
@@ -29,7 +35,7 @@ def deletePlayerRecord(name): # {
 
     players_json.pop(name)
     
-    writePlayerFile(player_json)
+    writePlayerFile(players_json)
 
     return
 # }
@@ -66,3 +72,6 @@ def checkPlayerRecord(name): # {
     else:
         return False
 # }
+
+addPlayerRecord("G", "R", "T", "t")
+deletePlayerRecord("G")
