@@ -1,4 +1,3 @@
 # This file stores all constants for the program
-from typing import Final
-
-EXAMPLE: Final = 5;
+ARTIFICER_BONUS = {"Inate": "N/A", 
+                   "In-Depth: 
