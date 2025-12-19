@@ -73,5 +73,6 @@ def checkPlayerRecord(name): # {
         return False
 # }
 
-addPlayerRecord("G", "R", "T", "t")
-deletePlayerRecord("G")
+# Testing
+if __name__ == "__main__":
+    pass

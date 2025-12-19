@@ -32,7 +32,7 @@ PLAYER_CLASS_BONUSES = {
             "LUMBER_ADV" : False,
             "CROP_ADV" : False,
             "LIVESTOCK_ADV" : False,
-            "MINERAL_ADV" : False,
+            "MINERALS_ADV" : False,
             "WATER_ADV" : False,
             "PRODUCTION_ADV" : False
           }
@@ -71,7 +71,7 @@ PLAYER_CLASS_BONUSES = {
             "LUMBER_ADV" : True,
             #"CROP_ADV" : False,
             #"LIVESTOCK_ADV" : False,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             #"PRODUCTION_ADV" : False
           }
@@ -109,7 +109,7 @@ PLAYER_CLASS_BONUSES = {
             #"LUMBER_ADV" : False,
             #"CROP_ADV" : False,
             #"LIVESTOCK_ADV" : False,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             #"PRODUCTION_ADV" : False
           }
@@ -147,7 +147,7 @@ PLAYER_CLASS_BONUSES = {
             #"LUMBER_ADV" : False,
             #"CROP_ADV" : False,
             #"LIVESTOCK_ADV" : False,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             #"PRODUCTION_ADV" : False
           }
@@ -189,7 +189,7 @@ PLAYER_CLASS_BONUSES = {
             "LUMBER_ADV" : True,
             "CROP_ADV" : True,
             #"LIVESTOCK_ADV" : False,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             #"PRODUCTION_ADV" : False
           }
@@ -228,7 +228,7 @@ PLAYER_CLASS_BONUSES = {
             #"LUMBER_ADV" : False,
             #"CROP_ADV" : False,
             #"LIVESTOCK_ADV" : False,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             #"PRODUCTION_ADV" : False
           }
@@ -268,7 +268,7 @@ PLAYER_CLASS_BONUSES = {
             #"LUMBER_ADV" : False,
             #"CROP_ADV" : False,
             #"LIVESTOCK_ADV" : False,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             #"PRODUCTION_ADV" : False
           }
@@ -308,7 +308,7 @@ PLAYER_CLASS_BONUSES = {
             #"LUMBER_ADV" : False,
             #"CROP_ADV" : False,
             #"LIVESTOCK_ADV" : False,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             #"PRODUCTION_ADV" : False
           }
@@ -347,7 +347,7 @@ PLAYER_CLASS_BONUSES = {
             #"LUMBER_ADV" : False,
             #"CROP_ADV" : False,
             "LIVESTOCK_ADV" : True,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             #"PRODUCTION_ADV" : False
           }
@@ -385,7 +385,7 @@ PLAYER_CLASS_BONUSES = {
             #"LUMBER_ADV" : False,
             #"CROP_ADV" : False,
             #"LIVESTOCK_ADV" : False,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             #"PRODUCTION_ADV" : False
           }
@@ -423,7 +423,7 @@ PLAYER_CLASS_BONUSES = {
             #"LUMBER_ADV" : False,
             #"CROP_ADV" : False,
             #"LIVESTOCK_ADV" : False,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             #"PRODUCTION_ADV" : False
           }
@@ -432,7 +432,7 @@ PLAYER_CLASS_BONUSES = {
         "WARLOCK" : {
           "BONUSES" : {
             "INDEPTH" : [
-              "MINERAL_ADV",
+              "MINERALS_ADV",
               "WATER_ADV"
               ],
             "INATE" : [
@@ -462,7 +462,7 @@ PLAYER_CLASS_BONUSES = {
             #"LUMBER_ADV" : False,
             #"CROP_ADV" : False,
             #"LIVESTOCK_ADV" : False,
-            "MINERAL_ADV" : True,
+            "MINERALS_ADV" : True,
             "WATER_ADV" : True,
             #"PRODUCTION_ADV" : False
           }
@@ -498,7 +498,7 @@ PLAYER_CLASS_BONUSES = {
             #"LUMBER_ADV" : False,
             #"CROP_ADV" : False,
             #"LIVESTOCK_ADV" : False,
-            #"MINERAL_ADV" : False,
+            #"MINERALS_ADV" : False,
             #"WATER_ADV" : False,
             "PRODUCTION_ADV" : 1
           }
@@ -506,7 +506,7 @@ PLAYER_CLASS_BONUSES = {
     }
 
 SPECIES_BONUSES = {
- "HUMANS" : {
+ "HUMANSS" : {
   "BONUSES" : {
     "PRIMARY_BONUS" : [
       "PRODUCTION_ADV"
@@ -549,10 +549,10 @@ SPECIES_BONUSES = {
  "DWARVES" : {
   "BONUSES" : {
     "PRIMARY_BONUS" : [
-      "MINERAL_PRODUCTION"
+      "MINERALS_PRODUCTION"
       ],
     "SECONDARY_BONUS" : [
-      "MINERAL_ADV"
+      "MINERALS_ADV"
       ],
     "COMBAT_BONUS" : [
       "DEFENSE"
@@ -560,8 +560,8 @@ SPECIES_BONUSES = {
     },
 
   "BONUS_VALUES" : {
-    "MINERAL_PRODUCTION" : .2,
-    "MINERAL_ADV" : True,
+    "MINERALS_PRODUCTION" : .2,
+    "MINERALS_ADV" : True,
     "DEFENSE" : 1
     }
   },
@@ -573,7 +573,7 @@ SPECIES_BONUSES = {
         "CROP_PRODUCTION",
         "LIVESTOCK_PRODUCTION",
         "LUMBER_PRODUCTION",
-        "MINERALS_PRODUCTION",
+        "MINERALSS_PRODUCTION",
         "WATER_PRODUCTION"
         ],
     "SECONDARY_BONUS" : [
@@ -587,93 +587,625 @@ SPECIES_BONUSES = {
     "CROP_PRODUCTION" : .05,
     "LIVESTOCK_PRODUCTION" : .05,
     "LUMBER_PRODUCTION" : .05,
-    "MINERALS_PRODUCTION" : .05,
+    "MINERALSS_PRODUCTION" : .05,
     "WATER_PRODUCTION" : .05  
     }
   },
 
- "HUMANS" : {
+ "GNOMES" : {
   "BONUSES" : {
-    "PRIMARY_BONUS" : "PRODUCTION_ADV",
-    "SECONDARY_BONUS" : None,
-    "COMBAT_BONUS" : [
-      "MILITARY_TRAINING_NOT_FIRST",
-      "XP_REDUCTION"
-      ]
+    "PRIMARY_BONUS" : [
+        "TRADE_BONUS_PRIME"
+        ],
+    "SECONDARY_BONUS" : [
+        "TRADE_BONUS_SEC"
+        ],
+    "COMBAT_BONUS" : []
     },
 
   "BONUS_VALUES" : {
-    "PRODUCTION_ADV" : 1,
-    "MILITARY_TRAINING_NOT_FIRST" : 1,
-    "XP_REDUCTION" : 1
+    "TRADE_BONUS_PRIME" : .1,
+    "TRADE_BONUS_SEC" : .05
     }
   },
 
- "HUMANS" : {
+ "DRAGONBORN" : {
   "BONUSES" : {
-    "PRIMARY_BONUS" : "PRODUCTION_ADV",
-    "SECONDARY_BONUS" : None,
+    "PRIMARY_BONUS" : [
+        "DEFENSE_PRIME"
+        ],
+    "SECONDARY_BONUS" : [
+        "DEFENSE_SEC"
+        ],
     "COMBAT_BONUS" : [
-      "MILITARY_TRAINING_NOT_FIRST",
-      "XP_REDUCTION"
+      "ATTACK"
       ]
     },
 
   "BONUS_VALUES" : {
-    "PRODUCTION_ADV" : 1,
-    "MILITARY_TRAINING_NOT_FIRST" : 1,
-    "XP_REDUCTION" : 1
+    "DEFENSE_PRIME" : 2,
+    "DEFENSE_SEC" : 1,
+    "ATTACK" : 1
     }
   },
 
- "HUMANS" : {
+ "HALF_ELVES" : {
   "BONUSES" : {
-    "PRIMARY_BONUS" : "PRODUCTION_ADV",
-    "SECONDARY_BONUS" : None,
-    "COMBAT_BONUS" : [
-      "MILITARY_TRAINING_NOT_FIRST",
-      "XP_REDUCTION"
-      ]
+    "PRIMARY_BONUS" : [
+        "PRODUCTION_PRODUCTION_PRIME"
+        ],
+    "SECONDARY_BONUS" : [
+        "PRODUCTION_PRODUCTION_SEC"
+        ],
+    "COMBAT_BONUS" : []
     },
 
   "BONUS_VALUES" : {
-    "PRODUCTION_ADV" : 1,
-    "MILITARY_TRAINING_NOT_FIRST" : 1,
-    "XP_REDUCTION" : 1
+    "PRODUCTION_PRODUCTION_PRIME" : .1,
+    "PRODUCTION_PRODUCTION_PRIME" : .05
     }
   },
 
- "HUMANS" : {
+ "TIEFLINGS" : {
   "BONUSES" : {
-    "PRIMARY_BONUS" : "PRODUCTION_ADV",
-    "SECONDARY_BONUS" : None,
+    "PRIMARY_BONUS" : [
+        "PIETY_PRIME",
+        ],
+    "SECONDARY_BONUS" : [
+        "PIETY_SEC"
+        ],
     "COMBAT_BONUS" : [
-      "MILITARY_TRAINING_NOT_FIRST",
-      "XP_REDUCTION"
+      "ATTACK"
       ]
     },
 
   "BONUS_VALUES" : {
-    "PRODUCTION_ADV" : 1,
-    "MILITARY_TRAINING_NOT_FIRST" : 1,
-    "XP_REDUCTION" : 1
+    "PIETY_PRIME" : .1,
+    "PIETY_SEC" : .05,
+    "ATTACK" : 1
     }
   },
 
- "HUMANS" : {
+ "HALF_ORC" : {
   "BONUSES" : {
-    "PRIMARY_BONUS" : "PRODUCTION_ADV",
-    "SECONDARY_BONUS" : None,
+      "PRIMARY_BONUS" : [
+        "MINERALS_PRODUCTION_PRIME", 
+        "LUMBER_PRODUCTION_PRIME"
+        ],
+    "SECONDARY_BONUS" : [
+        "MINERALS_PRODUCTION_SEC", 
+        "LUMBER_PRODUCTION_SEC"
+        ],
     "COMBAT_BONUS" : [
-      "MILITARY_TRAINING_NOT_FIRST",
-      "XP_REDUCTION"
-      ]
+        "CASUALTY_REDUCTION"
+        ]
     },
 
   "BONUS_VALUES" : {
-    "PRODUCTION_ADV" : 1,
-    "MILITARY_TRAINING_NOT_FIRST" : 1,
-    "XP_REDUCTION" : 1
+      "MINERALS_PRODUCTION_PRIME" : .1, 
+      "LUMBER_PRODUCTION_PRIME" : .1,
+      "MINERALS_PRODUCTION_SEC": .05,
+      "LUMBER_PRODUCTION_SEC" : .05,
+      "CASUALTY_REDUCTION" : .2
     }
   }
 }
+
+SPECIES_POP = {
+  "HUMANS" : {
+    "GROWTH_RATE" : .05,
+    "REPRODUCTION_RATE" : .12,
+    "DEATH_RATE" : .05
+    },
+  
+  "ELVES" : {
+    "GROWTH_RATE" : .01,
+    "REPRODUCTION_RATE" : .03,
+    "DEATH_RATE" : .01
+    },
+
+  "DWARVES" : {
+    "GROWTH_RATE" : .04,
+    "REPRODUCTION_RATE" : .06,
+    "DEATH_RATE" : .03
+    },
+
+  "HALFLINGS" : {
+    "GROWTH_RATE" : .05,
+    "REPRODUCTION_RATE" : .08,
+    "DEATH_RATE" : .04
+    },
+
+  "GNOMES" : {
+    "GROWTH_RATE" : .04,
+    "REPRODUCTION_RATE" : .09,
+    "DEATH_RATE" : .04
+    },
+
+  "DRAGONBORN" : {
+    "GROWTH_RATE" : .13,
+    "REPRODUCTION_RATE" : .09,
+    "DEATH_RATE" : .06
+    },
+
+  "HALF_ELVES" : {
+    "GROWTH_RATE" : .04,
+    "REPRODUCTION_RATE" : .06,
+    "DEATH_RATE" : .03
+    },
+
+  "TIEFLINGS" : {
+    "GROWTH_RATE" : .05,
+    "REPRODUCTION_RATE" : .11,
+    "DEATH_RATE" : .05
+    },
+
+  "HALF_ORC" : {
+    "GROWTH_RATE" : .17,
+    "REPRODUCTION_RATE" : .11,
+    "DEATH_RATE" : .08
+    }
+  }
+
+RESOURCE_TAX = {
+  "CROPS" : {
+    "TAX_TYPES" : {
+      "WORKERS" : [
+        "LOWER"
+      ],
+        "SALES_TAX" : True
+    },
+
+    "TAX_AMOUNT" : {
+      "LOWER" : 18,
+      "LOWER_AMOUNT" : 12,
+      "SAlES_TAX" : 2
+      }
+    },
+  
+  "LIVESTOCK" : {
+    "TAX_TYPES" : {
+      "WORKERS" : [
+        "LOWER"
+      ],
+        "SALES_TAX" : True
+    },
+
+    "TAX_AMOUNT" : {
+      "LOWER" : 15,
+      "LOWER_AMOUNT" : 10,
+      "SAlES_TAX" : 2
+      }
+    },
+  "LUMBER" : {
+    "TAX_TYPES" : {
+      "WORKERS" : [
+        "LOWER",
+        "MIDDLE"
+      ],
+        "SALES_TAX" : True
+    },
+
+    "TAX_AMOUNT" : {
+      "LOWER" : 10,
+      "LOWER_AMOUNT" : 6,
+      "MIDLE" : 8,
+      "MIDDLE_AMOUNT" : 2,
+      "SAlES_TAX" : 2
+      }
+    },
+
+  "MINERALS" : {
+    "TAX_TYPES" : {
+      "WORKERS" : [
+        "LOWER"
+      ],
+        "SALES_TAX" : True
+    },
+
+    "TAX_AMOUNT" : {
+      "LOWER" : 25,
+      "LOWER_AMOUNT" : 20,
+      "SAlES_TAX" : 20
+      }
+    },
+
+  "WATER" : {
+    "TAX_TYPES" : {
+      "WORKERS" : [
+        "MIDDLE"
+      ],
+        "SALES_TAX" : True
+    },
+
+    "TAX_AMOUNT" : {
+      "LOWER" : 25,
+      "MIDDLE_AMOUNT" : 8,
+      "SAlES_TAX" : 5
+      }
+    },
+
+  "ENTERTAINMENT" : {
+    "TAX_TYPES" : {
+      "WORKERS" : [
+        "MIDDLE",
+        "UPPER"
+      ],
+        "SALES_TAX" : False
+    },
+
+    "TAX_AMOUNT" : {
+      "MIDDLE" : 20,
+      "MIDDLE_AMOUNT" : 8,
+      "UPPER" : 15,
+      "UPPER_AMOUNT" : 2
+      }
+    }
+ }
+
+BUILDINGS = {
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 1,
+     "MINERALS" : 30,
+     "WATER" : 15
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : 0,
+     2 : 1001,
+     4 : 2001,
+     6 : 15001,
+     10 : "MAX"
+   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

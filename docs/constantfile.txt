@@ -1,10 +1,10 @@
 The constant folder stores all of the constants for the program. They should never be edited
 Most constants are set in the Kingdom Of Avarya Rules(ex: Bard gets 25% increase taxable income on entertainment)
 
-The playerclassbonus file stores all country bonuses player's get from their class. 
+The bonus file stores all country bonuses player's get from their class. 
 The file is organized by dictionaries of dictionaries. 
-Each class has a BONUSES entry, which stores what type of bonuses each class get.
-THE INATE entry stores what bonuses each province recieve automaticly.
+Each class has a BONUSES entry, which stores what type of bonuses each class gets.
+The INATE entry stores what bonuses each province recieve automaticly.
 The INDEPTH entry stores what bonuses a province gets in the player works in depth.
 
 A list of all the different types of bonuses for classes
@@ -32,4 +32,19 @@ A list of all the different types of bonuses for classes
     LIVESTOCK_ADV - Province gets advantage on livestock production check (bool)
     MINERAL_ADV - Province gets advantage on mineral production check (bool)
     WATER_ADV - Province gets advantage on water production check (bool)
-    PRODUCTION_ADV - How many production checks the province gets advantage on
+    PRODUCTION_ADV - How many bonus production checks the province gets advantage on (int)
+
+The bonus file also stores all bonuses a species provides to a province, as well as a species population rate.
+These are also organized as dictionaries of dictionaries.
+Each of the species has a BONUSES entry, which stores what type of bonuses each specie gets.
+The PRIMARY_BONUS entry stores what the specie provides when it is the most populous specie in a province
+The SECONDARY_BONUS entry stores what the specie provides when it is the second most populous specie in a province
+The COMBAT_BONUS entry stores what the specie provides when it is the most populous specie in a army unit 
+
+A list of all the different types of bonuses for species
+  PRIMARY_BONUS
+    PRODUCTION_ADV - How many bonus production checks the province gets advantage on (int)
+    LIVESTOCK_PRODUCTION_PRIME -
+    LUMBER_PRODUCTION_PRIME -
+    MINERAL_PRODUCTION -
+    
