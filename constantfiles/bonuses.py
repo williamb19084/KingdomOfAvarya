@@ -1,4 +1,13 @@
 # This file stores all the constants for the program
+HAMLET_POP = 0
+VILLAGE_POP = 501
+SETTLEMENT_POP = 1001
+SMALL_TOWN_POP = 2001
+LARGE_TOWN_POP = 5001
+SMALL_CITY_POP = 15001
+MEDIUM_CITY_POP = 40001
+LARGE_CITY_POP = 100001
+MEGALOPOLIS_POP = 200001
 
 PLAYER_CLASS_BONUSES = {
         "ARTIFICER" : {
@@ -844,21 +853,472 @@ RESOURCE_TAX = {
  }
 
 BUILDINGS = {
- "CHAPEL" : {
+ "POP_HOUSING" : {
    "MATERIALS" : {
      "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
+       "LUMBER"
        ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
+     "LUMBER" : 15
      },
     
    "CONSTRUCTION" : {
      "WORKERS" : 250,
      "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : HAMLET_POP
+   },
+   
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "HOUSES"
+       ],
+     "HOUSES" : 500
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "CROPS"
+      ],
+      "CROPS" : 10
+   }
+ },
+
+ "CHAPEL" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "WATER",
+       "MINERALS"
+       ],
+     "BUILD_POINT" : 1,
+     "WATER" : 15,
+     "MINERALS" : 30
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : HAMLET_POP,
+     2 : SETTLEMENT_POP,
+     4 : SMALL_TOWN_POP,
+     6 : SMALL_CITY_POP,
+     10 : LARGE_CITY_POP,
+     11 : "MAX"
+   },
+   
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "PIETY_SPECIFIC"
+       ],
+     "PIETY_SPECIFIC" : 1
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : []
+   }
+ },
+
+ "TEMPLE" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER",
+       "LUMBER"
+       ],
+     "BUILD_POINT" : 3,
+     "MINERALS" : 230,
+     "WATER" : 60,
+     "LUMBER" : 100
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 500,
+     "SEASONS" : 12
+   },
+
+   "POPULATION" : {
+     1 : SMALL_TOWN_POP,
+     2 : SMALL_CITY_POP,
+     4 : LARGE_CITY_POP,
+     5 : "MAX"
+   },
+
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "PIETY_SPECIFIC",
+       "SATISFACTION_MIDDLE_CLASS",
+       "SATISFACTION_UPPER_CLASS",
+     ],
+     "PIETY_SPECIFIC" : 3,
+     "SATISFACTION_MIDDLE_CLASS" : 1,
+     "SATISFACTION_UPPER_CLASS" : 1
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+        "WATER",
+        "LIVESTOCK"
+        ],
+      "WATER" : 60,
+      "LIVESTOCK" : 40
+      }
+   },
+
+ "MONASTERY" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "CROPS",
+       "WATER",
+       "LIVESTOCK"
+       ],
+     "BUILD_POINT" : 5,
+     "MINERALS" : 600,
+     "WATER" : 200,
+     "LIVESTOCK" : 80
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 625,
+     "SEASONS" : 16
+   },
+
+   "POPULATION" : {
+     1 : MEDIUM_CITY_POP,
+     2 : "MAX"
+   },
+
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "PIETY_SPECIFIC",
+       "SATISFACTION_LOWER_CLASS",
+       "SATISFACTION_MIDDLE_CLASS",
+       "SATISFACTION_UPPER_CLASS"
+     ],  
+     "PIETY_SPECIFIC" : 6,
+     "SATISFACTION_LOWER_CLASS" : 2,
+     "SATISFACTION_MIDDLE_CLASS" : 2,
+     "SATISFACTION_UPPER_CLASS" : 2
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "WATER",
+      "CROPS",
+      "LIVESTOCK"
+      ],
+    "WATER" : 120,
+    "CROPS" : 60,
+    "LIVESTOCK" : 60
+   }
+ },
+
+
+ "GARRISON" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "LUMBER"
+       ],
+     "BUILD_POINT" : 1,
+     "LUMBER" : 40
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 4
+   },
+
+   "POPULATION" : {
+     1 : HAMLET_POP,
+     2 : SMALL_TOWN_POP,
+     3 : SMALL_CITY_POP,
+     4 : LARGE_CITY_POP,
+     5 : "MAX"
+   },
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "DEFENSE"
+       ],
+     "DEFENSE" : 1
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : []
+   }
+ },
+
+ "TOWER" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "LUMBER"
+       ],
+     "BUILD_POINT" : 2,
+     "MINERALS" : 40,
+     "LUMBER" : 90
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 8
+   },
+
+   "POPULATION" : {
+     1 : HAMLET_POP,
+     2 : SMALL_CITY_POP,
+     6 : MEDIUM_CITY_POP,
+     10 : "MAX"
+   },
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "DEFENSE"
+       ], 
+     "DEFENSE" : 2
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "CROPS"
+      ],
+    "CROPS" : 40
+   }
+ },
+
+ "TRAINING_CAMP" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "CROPS",
+       "WATER",
+       "LUMBER"
+       ],
+     "BUILD_POINT" : 3,
+     "CROPS" : 120,
+     "WATER" : 40,
+     "LUMBER" : 260
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : SMALL_TOWN_POP,
+     2 : MEDIUM_CITY_POP,
+     3 : "MAX"
+   },
+
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+     "MILITARY_TRAINING"
+     ],
+     "MILITARY_TRAINING" : 1
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "LUMBER",
+      "CROPS"
+      ],
+    "LUMBER" : 80,
+    "CROPS" : 50
+   }
+ },
+
+ "KEEP" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "LUMBER",
+       "CROPS"
+       ],
+     "BUILD_POINT" : 4,
+     "MINERALS" : 450,
+     "LUMBER" : 140,
+     "CROPS" : 90
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 500,
+     "SEASONS" : 20
+   },
+
+   "POPULATION" : {
+     1 : LARGE_TOWN_POP,
+     2 : LARGE_CITY_POP,
+     3 : "MAX"
+   },
+
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "DEFENSE"
+     ],  
+     "DEFENSE" : 5
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+    "CROPS",
+    "LIVESTOCK"
+    ],
+    "CROPS" : 70,
+    "LIVESTOCK" : 70
+   }
+ },
+
+ "CASTLE" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "LUMBER"
+       ],
+     "BUILD_POINT" : 5,
+     "MINERALS" : 700,
+     "LUMBER" : 100
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 500,
+     "SEASONS" : 32
+   },
+
+   "POPULATION" : {
+     1 : SMALL_CITY_POP,
+     2 : "MAX"
+   },
+
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "DEFENSE",
+       "SATISFACTION_LOWER_CLASS",
+       "SATISFACTION_MIDDLE_CLASS",
+       "SATISFACTION_UPPER_CLASS"
+       ],
+     "DEFENSE" : 8,
+     "SATISFACTION_LOWER_CLASS" : 1,
+     "SATISFACTION_MIDDLE_CLASS" : 1,
+     "SATISFACTION_UPPER_CLASS" : 1
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "LUMBER",
+      "LIVESTOCK",
+      "CROPS"
+      ],
+    "LUMBER" : 80,
+    "CROPS" : 100,
+    "LIVESTOCK" : 50
+   }
+ },
+
+ "BAR" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "LUMBER"
+       ],
+     "BUILD_POINT" : 1,
+     "LUMBER" : 40
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 2
+   },
+
+   "POPULATION" : {
+     1 : HAMLET_POP,
+     2 : SMALL_TOWN_POP,
+     3 : SMALL_CITY_POP,
+     4 : LARGE_CITY_POP,
+     5 : MEGALOPOLIS_POP,
+     6 : "MAX"
+   },
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "SATISFACTION_LOWER_CLASS",
+       "SATISFACTION_MIDDLE_CLASS"
+       ],  
+     "SATISFACTION_LOWER_CLASS" : 1,
+     "SATISFACTION_MIDDLE_CLASS" : 1
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "CROPS"
+      ],
+    "CROPS" : 15
+   }
+ },
+
+ "PALACE" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER",
+       "LUMBER"
+       ],
+     "BUILD_POINT" : 2,
+     "MINERALS" : 40,
+     "WATER" : 20,
+     "LUMER" : 50
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 6
+   },
+
+   "POPULATION" : {
+     1 : SETTLEMENT_POP,
+     2 : SMALL_CITY_POP,
+     3 : LARGE_CITY_POP,
+     4 : "MAX"
+   },
+
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "SATISFACTION_UPPER_CLASS",
+       "DEFENSE"
+       ],
+     "DEFENSE" : 1,
+     "SATISFACTION_UPPER_CLASS" : 2
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "WATER"
+      ],
+    "WATER" : 15
+   }
+ },
+
+ "SHOWPLACE" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "LUMBER"
+       ],
+     "BUILD_POINT" : 2,
+     "LUMBER" : 100
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 250,
+     "SEASONS" : 4
    },
 
    "POPULATION" : {
@@ -868,344 +1328,199 @@ BUILDINGS = {
      6 : 15001,
      10 : "MAX"
    },
- "CHAPEL" : {
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "SATISFACTION_LOWER_CLASS",
+       "SATISFACTION_MIDDLE_CLASS",
+       "SATISFACTION_UPPER_CLASS"
+       ],
+     "SATISFACTION_LOWER_CLASS" : 1,
+     "SATISFACTION_MIDDLE_CLASS" : 1,
+     "SATISFACTION_UPPER_CLASS" : 1
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "LIVESTOCK"
+      ],
+    "LIVESTOCK" : 25
+   }
+ },
+
+ "THEATRE" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "LUMBER",
+       "MINERALS",
+       "WATER"
+       ],
+     "BUILD_POINT" : 4,
+     "MINERALS" : 90,
+     "WATER" : 40,
+     "LUMBER" : 240
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 500,
+     "SEASONS" : 16
+   },
+
+   "POPULATION" : {
+     1 : LARGE_TOWN_POP,
+     2 : MEDIUM_CITY_POP,
+     3 : MEGALOPOLIS_POP,
+     4 : "MAX"
+   },
+
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "SATISFACTION_LOWER_CLASS",
+       "SATISFACTION_MIDDLE_CLASS",
+       "SATISFACTION_UPPER_CLASS"
+       ],
+     "SATISFACTION_LOWER_CLASS" : 3,
+     "SATISFACTION_MIDDLE_CLASS" : 3,
+     "SATISFACTION_UPPER_CLASS" : 4
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "CROPS",
+      "LUMBER",
+      "WATER"
+      ],
+    "CROPS" : 50,
+    "LUMBER" : 50,
+    "WATER" : 20
+   }
+ },
+
+ "COLOSSEUM" : {
+   "MATERIALS" : {
+     "MATERIALS_REQUIRED" : [
+       "BUILD_POINT",
+       "MINERALS",
+       "WATER",
+       "LUMBER"
+       ],
+     "BUILD_POINT" : 7,
+     "MINERALS" : 1200,
+     "WATER" : 160,
+     "LUMBER" : 340
+     },
+    
+   "CONSTRUCTION" : {
+     "WORKERS" : 1250,
+     "SEASONS" : 16
+   },
+
+   "POPULATION" : {
+     1 : LARGE_CITY_POP,
+     2 : "MAX"
+   },
+
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "SATISFACTION_LOWER_CLASS",
+       "SATISFACTION_MIDDLE_CLASS",
+       "SATISFACTION_UPPER_CLASS",
+       "MILITARY_ENTERTAINMENT"
+       ],
+     "SATISFACTION_LOWER_CLASS" : 6,
+     "SATISFACTION_MIDDLE_CLASS" : 4,
+     "SATISFACTION_UPPER_CLASS" : 4,
+     "MILITARY_ENTERTAINMENT" : True
+   },
+
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "CROPS",
+      "MINERALS",
+      "LUMBER",
+      "LIVESTOCK",
+      "WATER"
+      ],
+    "WATER" : 60,
+    "LIVESTOCK" : 100,
+    "LUMBER" : 100,
+    "MINERALS" : 150,
+    "CROPS" : 100
+   }
+ },
+
+ "CRADLE_OF_GODS" : {
    "MATERIALS" : {
      "MATERIALS_REQUIRED" : [
        "BUILD_POINT",
        "MINERALS",
        "WATER"
        ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
+     "BUILD_POINT" : 7,
+     "MINERALS" : 1300,
+     "WATER" : 400
      },
     
    "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
+     "WORKERS" : 750,
+     "SEASONS" : 32
    },
 
    "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
+     1 : LARGE_CITY_POP,
+     2 : "MAX"
    },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
+   "BENEFIT" : {
+     "BENEFIT_LIST" : [
+       "PEITY_SPECIFIC",
+       "DEFENSE",
+       "SATISFACTION_LOWER_CLASS",
+       "SATISFACTION_MIDDLE_CLASS",
+       "SATISFACTION_UPPER_CLASS"
        ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
+     "PIETY_SPECIFIC" : 12,
+     "DEFENSE" : 2,
+     "SATISFACTION_LOWER_CLASS" : 2,
+     "SATISFACTION_MIDDLE_CLASS" : 2,
+     "SATISFACTION_UPPER_CLASS" : 2
    },
 
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
+   "UPKEEP" : {
+    "UPKEEP_REQUIRED" : [
+      "MINERLAS",
+      "WATER",
+      "LIVESTOCK"
+      ],
+    "MINERLAS" : 180,
+    "WATER" : 200,
+    "LIVESTOCK" : 140
+   }
+ }
 
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
+},
 
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
+PROVINCE_CONSTANTS = {
+  "POP_REQUIREMENTS" : {
+      "HAMLET" : HAMLET_POP,
+      "VILLAGE" : VILLAGE_POP,
+      "SETTLEMENT" : SETTLEMENT_POP,
+      "SMALL_TOWN" : SMALL_TOWN_POP,
+      "LARGE_TOWN" : LARGE_TOWN_POP,
+      "SMALL_CITY" : SMALL_CITY_POP,
+      "MEDIUM_CITY" : MEDIUM_CITY_POP,
+      "LARGE_CITY" : LARGE_CITY_POP,
+      "MEGALOPOLIS" : MEGALOPOLIS_POP
+  },
 
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
-
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
-
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
-
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
-
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
-
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
-
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
-
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
- "CHAPEL" : {
-   "MATERIALS" : {
-     "MATERIALS_REQUIRED" : [
-       "BUILD_POINT",
-       "MINERALS",
-       "WATER"
-       ],
-     "BUILD_POINT" : 1,
-     "MINERALS" : 30,
-     "WATER" : 15
-     },
-    
-   "CONSTRUCTION" : {
-     "WORKERS" : 250,
-     "SEASONS" : 2
-   },
-
-   "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
-   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "POP_BUILD_POINTS" : {
+      "HAMLET" : 1,
+      "VILLAGE" : 2,
+      "SETTLEMNET" : 3,
+      "SMALL_TOWN" : 5,
+      "LARGE_TOWN" : 8,
+      "SMALL_CITY" : 12,
+      "MEDIUM_CITY" : 20,
+      "LARGE_CITY" : 30,
+      "MEGALOPOLIS" : 50
+  }
+}
