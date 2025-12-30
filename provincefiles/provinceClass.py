@@ -1,6 +1,9 @@
 # A file that contains the class definition for a province
+#Imports the constants
+import sys
+sys.path.append("..")
 
-#import bonuses
+from constantfiles import bonuses
 
 class Province:
     
@@ -27,8 +30,6 @@ class Province:
                 for age in self.population[specie][eco_status]:
                     self.population_total += population[specie][eco_status][age]
                     self.population_specie[specie] += population[specie][eco_status][age]
-        
-        
 
         #Calculates the primary and secondary specie of the province
         self.primary_specie = "HUMANS"
@@ -40,6 +41,12 @@ class Province:
                 #Moves the previous primary species down to the secondary specie
                 self.secondary_specie = self.primary_specie
                 self.primary_specie = specie
+        
+        #Determines what size the province is
+        for pop_req in bonuses.PROVINCE_CONSTANTS["POP_REQUIREMENTS"]:
+            if self.population_total > bonuses.PROVINCE_CONSTANTS["POP_REQUIREMENTS"][pop_req]:
+                self.size = pop_req
+
 
     def constructBuilding():
         pass
@@ -129,6 +136,7 @@ if __name__ == "__main__":
                 }
             }
         }
-
+    
+    print(PLAYER_CLASS_BONUSES)
     test_class = Province("test", example_population)
     test_class.printInfo()
