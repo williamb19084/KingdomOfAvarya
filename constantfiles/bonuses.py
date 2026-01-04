@@ -867,7 +867,15 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : HAMLET_POP
+     "HAMLET" : -1,
+     "VILLAGE" : -1,
+     "SETTLEMENT" : -1,
+     "SMALL_TOWN" : -1,
+     "LARGE_TOWN" : -1,
+     "SMALL_CITY" : -1,
+     "MEDIUM_CITY" : -1,
+     "LARGE_CITY" : -1,
+     "MEGALOPOLIS" : -1
    },
    
    "BENEFIT" : {
@@ -903,12 +911,21 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : HAMLET_POP,
-     2 : SETTLEMENT_POP,
-     4 : SMALL_TOWN_POP,
-     6 : SMALL_CITY_POP,
-     10 : LARGE_CITY_POP,
-     11 : "MAX"
+     "HAMLET" : 1,
+     "VILLAGE" : 1,
+     "SETTLEMENT" : 2,
+     "SMALL_TOWN" : 4,
+     "LARGE_TOWN" : 4,
+     "SMALL_CITY" : 6,
+     "MEDIUM_CITY" : 6,
+     "LARGE_CITY" : 10,
+     "MEGALOPOLIS" : 10
+     #"HAMLET" : 1,
+     #"SETTLEMENT" : 2,
+     #"SMALL_TOWN" : 4,
+     #"SMALL_CITY" : 6,
+     #"LARGE_CITY" : 10,
+     #11 : "MAX"
    },
    
    "BENEFIT" : {
@@ -943,10 +960,19 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : SMALL_TOWN_POP,
-     2 : SMALL_CITY_POP,
-     4 : LARGE_CITY_POP,
-     5 : "MAX"
+     "HAMLET" : 0,
+     "VILLAGE" : 0,
+     "SETTLEMENT" : 0,
+     "SMALL_TOWN" : 1,
+     "LARGE_TOWN" : 1,
+     "SMALL_CITY" : 2,
+     "MEDIUM_CITY" : 2,
+     "LARGE_CITY" : 4,
+     "MEGALOPOLIS" : 4
+     #1 : SMALL_TOWN_POP,
+     #2 : SMALL_CITY_POP,
+     #4 : LARGE_CITY_POP,
+     #5 : "MAX"
    },
 
    "BENEFIT" : {
@@ -990,8 +1016,17 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : MEDIUM_CITY_POP,
-     2 : "MAX"
+     "HAMLET" : 0,
+     "VILLAGE" : 0,
+     "SETTLEMENT" : 0,
+     "SMALL_TOWN" : 0,
+     "LARGE_TOWN" : 0,
+     "SMALL_CITY" : 0,
+     "MEDIUM_CITY" : 1,
+     "LARGE_CITY" : 1,
+     "MEGALOPOLIS" : 1
+     #1 : MEDIUM_CITY_POP,
+     #2 : "MAX"
    },
 
    "BENEFIT" : {
@@ -1036,11 +1071,20 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : HAMLET_POP,
-     2 : SMALL_TOWN_POP,
-     3 : SMALL_CITY_POP,
-     4 : LARGE_CITY_POP,
-     5 : "MAX"
+     "HAMLET" : 1,
+     "VILLAGE" : 1,
+     "SETTLEMENT" : 1,
+     "SMALL_TOWN" : 2,
+     "LARGE_TOWN" : 2,
+     "SMALL_CITY" : 3,
+     "MEDIUM_CITY" : 3,
+     "LARGE_CITY" : 4,
+     "MEGALOPOLIS" : 4
+     #1 : HAMLET_POP,
+     #2 : SMALL_TOWN_POP,
+     #3 : SMALL_CITY_POP,
+     #4 : LARGE_CITY_POP,
+     #5 : "MAX"
    },
    "BENEFIT" : {
      "BENEFIT_LIST" : [
@@ -1072,10 +1116,19 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : HAMLET_POP,
-     2 : SMALL_CITY_POP,
-     6 : MEDIUM_CITY_POP,
-     10 : "MAX"
+     "HAMLET" : 1,
+     "VILLAGE" : 1,
+     "SETTLEMENT" : 1,
+     "SMALL_TOWN" : 1,
+     "LARGE_TOWN" : 2,
+     "SMALL_CITY" : 2,
+     "MEDIUM_CITY" : 3,
+     "LARGE_CITY" : 3,
+     "MEGALOPOLIS" : 3
+     #1 : HAMLET_POP,
+     #2 : SMALL_CITY_POP,
+     #6 : MEDIUM_CITY_POP,
+     #10 : "MAX"
    },
    "BENEFIT" : {
      "BENEFIT_LIST" : [
@@ -1112,9 +1165,18 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : SMALL_TOWN_POP,
-     2 : MEDIUM_CITY_POP,
-     3 : "MAX"
+     "HAMLET" : 0,
+     "VILLAGE" : 0,
+     "SETTLEMENT" : 0,
+     "SMALL_TOWN" : 1,
+     "LARGE_TOWN" : 1,
+     "SMALL_CITY" : 1,
+     "MEDIUM_CITY" : 2,
+     "LARGE_CITY" : 2,
+     "MEGALOPOLIS" : 2
+     #1 : SMALL_TOWN_POP,
+     #2 : MEDIUM_CITY_POP,
+     #3 : "MAX"
    },
 
    "BENEFIT" : {
@@ -1154,9 +1216,18 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : LARGE_TOWN_POP,
-     2 : LARGE_CITY_POP,
-     3 : "MAX"
+     "HAMLET" : 0,
+     "VILLAGE" : 0,
+     "SETTLEMENT" : 0,
+     "SMALL_TOWN" : 0,
+     "LARGE_TOWN" : 1,
+     "SMALL_CITY" : 1,
+     "MEDIUM_CITY" : 1,
+     "LARGE_CITY" : 2,
+     "MEGALOPOLIS" : 2
+     #1 : LARGE_TOWN_POP,
+     #2 : LARGE_CITY_POP,
+     #3 : "MAX"
    },
 
    "BENEFIT" : {
@@ -1194,8 +1265,17 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : SMALL_CITY_POP,
-     2 : "MAX"
+     "HAMLET" : 0,
+     "VILLAGE" : 0,
+     "SETTLEMENT" : 0,
+     "SMALL_TOWN" : 0,
+     "LARGE_TOWN" : 0,
+     "SMALL_CITY" : 1,
+     "MEDIUM_CITY" : 1,
+     "LARGE_CITY" : 1,
+     "MEGALOPOLIS" : 1
+     #1 : SMALL_CITY_POP,
+     #2 : "MAX"
    },
 
    "BENEFIT" : {
@@ -1239,12 +1319,21 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : HAMLET_POP,
-     2 : SMALL_TOWN_POP,
-     3 : SMALL_CITY_POP,
-     4 : LARGE_CITY_POP,
-     5 : MEGALOPOLIS_POP,
-     6 : "MAX"
+     "HAMLET" : 1,
+     "VILLAGE" : 1,
+     "SETTLEMENT" : 1,
+     "SMALL_TOWN" : 2,
+     "LARGE_TOWN" : 2,
+     "SMALL_CITY" : 3,
+     "MEDIUM_CITY" : 3,
+     "LARGE_CITY" : 4,
+     "MEGALOPOLIS" : 5
+     #1 : HAMLET_POP,
+     #2 : SMALL_TOWN_POP,
+     #3 : SMALL_CITY_POP,
+     #4 : LARGE_CITY_POP,
+     #5 : MEGALOPOLIS_POP,
+     #6 : "MAX"
    },
    "BENEFIT" : {
      "BENEFIT_LIST" : [
@@ -1283,10 +1372,19 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : SETTLEMENT_POP,
-     2 : SMALL_CITY_POP,
-     3 : LARGE_CITY_POP,
-     4 : "MAX"
+     "HAMLET" : 0,
+     "VILLAGE" : 0,
+     "SETTLEMENT" : 1,
+     "SMALL_TOWN" : 1,
+     "LARGE_TOWN" : 1,
+     "SMALL_CITY" : 2,
+     "MEDIUM_CITY" : 2,
+     "LARGE_CITY" : 3,
+     "MEGALOPOLIS" : 3
+     #1 : SETTLEMENT_POP,
+     #2 : SMALL_CITY_POP,
+     #3 : LARGE_CITY_POP,
+     #4 : "MAX"
    },
 
    "BENEFIT" : {
@@ -1367,10 +1465,19 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : LARGE_TOWN_POP,
-     2 : MEDIUM_CITY_POP,
-     3 : MEGALOPOLIS_POP,
-     4 : "MAX"
+     "HAMLET" : 0,
+     "VILLAGE" : 0,
+     "SETTLEMENT" : 0,
+     "SMALL_TOWN" : 0,
+     "LARGE_TOWN" : 1,
+     "SMALL_CITY" : 1,
+     "MEDIUM_CITY" : 2,
+     "LARGE_CITY" : 2,
+     "MEGALOPOLIS" : 3
+     #1 : LARGE_TOWN_POP,
+     #2 : MEDIUM_CITY_POP,
+     #3 : MEGALOPOLIS_POP,
+     #4 : "MAX"
    },
 
    "BENEFIT" : {
@@ -1416,8 +1523,17 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : LARGE_CITY_POP,
-     2 : "MAX"
+     "HAMLET" : 0,
+     "VILLAGE" : 0,
+     "SETTLEMENT" : 0,
+     "SMALL_TOWN" : 0,
+     "LARGE_TOWN" : 0,
+     "SMALL_CITY" : 0,
+     "MEDIUM_CITY" : 0,
+     "LARGE_CITY" : 1,
+     "MEGALOPOLIS" : 1
+     #1 : LARGE_CITY_POP,
+     #2 : "MAX"
    },
 
    "BENEFIT" : {
@@ -1467,8 +1583,17 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : LARGE_CITY_POP,
-     2 : "MAX"
+     "HAMLET" : 0,
+     "VILLAGE" : 0,
+     "SETTLEMENT" : 0,
+     "SMALL_TOWN" : 0,
+     "LARGE_TOWN" : 0,
+     "SMALL_CITY" : 0,
+     "MEDIUM_CITY" : 0,
+     "LARGE_CITY" : 1,
+     "MEGALOPOLIS" : 1
+     #1 : LARGE_CITY_POP,
+     #2 : "MAX"
    },
    "BENEFIT" : {
      "BENEFIT_LIST" : [
@@ -1497,7 +1622,7 @@ BUILDINGS = {
    }
  }
 
-},
+}
 
 PROVINCE_CONSTANTS = {
   "POP_REQUIREMENTS" : {

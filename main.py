@@ -49,7 +49,31 @@ def testPop():
             }
         }
 
-    test_class = provinceClass.Province("test", example_population)
+    #TEST BUILDING
+    example_building = {
+            "POP_HOUSING" : 0,
+            "CHAPEL" : 0,
+            "TEMPLE" : 7,
+            "MONASTERY" : 0,
+            "GARRISON" : 0,
+            "TOWER" : 0,
+            "TRAINING CAMP" : 0,
+            "KEEP" : 0,
+            "CASTLE" : 0,
+            "BAR" : 0,
+            "PALACE" : 0,
+            "SHOWPLACE" : 0,
+            "THEATRE" : 0,
+            "COLOSSEUM" : 0,
+            "CRADLE_OF_GODS" : 0
+            }
+
+    test_class = provinceClass.Province("test", example_population, example_building)
+    test_class.printInfo()
+    test_class.addPopulation(example_population)
+    test_class.printInfo()
+    test_class.subtractPopulation(example_population)
+    test_class.printInfo()
 
 if __name__ == "__main__":
     testPop()
