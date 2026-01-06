@@ -856,8 +856,10 @@ BUILDINGS = {
  "POP_HOUSING" : {
    "MATERIALS" : {
      "MATERIALS_REQUIRED" : [
-       "LUMBER"
+       "LUMBER",
+       "BUILD_POINTS"
        ],
+     "BUILD_POINTS" : 0,
      "LUMBER" : 15
      },
     

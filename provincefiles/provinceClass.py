@@ -9,11 +9,41 @@ class Province:
     
     #The population variable is a dictionary in a dictionary in a dictionary
     def __init__(self, name, population, buildings):
+        self.counter = 0
         self.name = name
         self.population = population
         self.buildings = buildings
         self.stats = {} #IMPLEMENT
+        self.required_materials = {
+                "CONSTRUCTION_WORKERS" : 0,
+                "WATER" : 0,
+                "LUMBER" : 0,
+                "LIVESTOCK" : 0,
+                "MINERLAS" : 0,
+                "CROPS" : 0
+                }
+        
+        self.under_construction = {
+                "POP_HOUSING" : 0,
+                "CHAPEL" : 0,
+                "TEMPLE" : 0,
+                "MONASTERY" : 0,
+                "GARRISON" : 0,
+                "TOWER" : 0,
+                "TRAINING_CAMP" : 0,
+                "KEEP" : 0,
+                "CASTLE" : 0,
+                "BAR" : 0,
+                "PALACE" : 0,
+                "SHOWPLACE" : 0,
+                "THEATRE" : 0,
+                "COLOSSEUM" : 0,
+                "CRADLE_OF_GODS" : 0
+                }
+
+        self.under_construction_list = {}
         self.upkeep = {
+                "WORKERS" : 0,
                 "WATER" : 0,
                 "LUMBER" : 0,
                 "LIVESTOCK" : 0,
@@ -63,54 +93,128 @@ class Province:
         #self.build_points_total = bonuses.PROVINCE_CONSTANTS["POP_BUILD_POINTS"][self.size]
         #self.build_points_current = self.build_points_total
     
-    #Adds a building to the buildings dictionary
-    def constructBuilding(self, building_name):
+    #Adds a building to the building queue
+    def constructBuilding(self, building_name, workers):
+        assert self.checkBuilding(building_name) #Validates building is legal
+        
+        #Validates if the amount of workers can be construct the building in a whole number of seasons
+        workers_per_season = (bonuses.BUILDINGS[building_name]["CONSTRUCTION"]["WORKERS"] * bonuses.BUILDINGS[building_name]["CONSTRUCTION"]["SEASONS"]) / workers
+        construction_time = int(workers_per_season)
+        cond1 = construction_time == workers_per_season
+        cond2 = construction_time <= bonuses.BUILDINGS[building_name]["CONSTRUCTION"]["WORKERS"]
+        if cond1 and cond2:
+            pass
+        else:
+            #print(construction_time)
+            raise ArithmeticError
+
+        #self.buildings[building_name] += 1
+        self.build_points_current -= bonuses.BUILDINGS[building_name]["MATERIALS"]["BUILD_POINTS"] 
+        
+        #Adds the building to the building queue, and adds a number to it to differentiate it from other buildings of the same type being constructed
+        entry = building_name + "_" + str(self.under_construction[building_name])
+        self.under_construction[building_name] += 1 #Increments the amount of this type of building being built
+        self.under_construction_list[entry] = {
+                "WORKERS" : workers,
+                "SEASONS_LEFT" : construction_time,
+                "BUILDING?" : True
+                }
+        self.upkeep["WORKERS"] += workers
+
+    #Any buildings that have finished constructing are added to the building list
+    def addBuildings():
         pass
 
-    def destroyBuilding(self):
-        pass
+    #Removes a building from the buildings already constructed
+    def destroyBuilding(self, building_name):
+        #Makes sure there is at least one building to destroy
+        if self.buildings[building_name] == 0:
+            raise ValueError
+        self.buildings[building_name] -= 1
     
     #Adds to the population of the province
     def addPopulation(self, population):
         for specie in population:
+            #print(specie)
             self.population[specie]["LOWER_CLASS"]["CHILDREN"] += self.population[specie]["LOWER_CLASS"]["CHILDREN"]
             self.population[specie]["LOWER_CLASS"]["ADULT"] += population[specie]["LOWER_CLASS"]["ADULT"]
             self.population[specie]["MIDDLE_CLASS"]["CHILDREN"] += population[specie]["MIDDLE_CLASS"]["CHILDREN"]
             self.population[specie]["MIDDLE_CLASS"]["ADULT"] += population[specie]["MIDDLE_CLASS"]["ADULT"]
             self.population[specie]["UPPER_CLASS"]["CHILDREN"] += population[specie]["UPPER_CLASS"]["CHILDREN"]
             self.population[specie]["UPPER_CLASS"]["ADULT"] += population[specie]["UPPER_CLASS"]["ADULT"]
-            self.updatePopulations(population)
+        self.updatePopulations(population)
 
     #Removes the population of the province 
     def subtractPopulation(self, population): 
         tmp_population = self.population
 
         for specie in population:
+            #print(self.population[specie]["LOWER_CLASS"]["CHILDREN"], population[specie]["LOWER_CLASS"]["CHILDREN"])
             self.population[specie]["LOWER_CLASS"]["CHILDREN"] -= population[specie]["LOWER_CLASS"]["CHILDREN"] 
             self.population[specie]["LOWER_CLASS"]["ADULT"] -= population[specie]["LOWER_CLASS"]["ADULT"]
             self.population[specie]["MIDDLE_CLASS"]["CHILDREN"] -= population[specie]["MIDDLE_CLASS"]["CHILDREN"]
             self.population[specie]["MIDDLE_CLASS"]["ADULT"] -= population[specie]["MIDDLE_CLASS"]["ADULT"]
             self.population[specie]["UPPER_CLASS"]["CHILDREN"] -= population[specie]["UPPER_CLASS"]["CHILDREN"]
             self.population[specie]["UPPER_CLASS"]["ADULT"] -= population[specie]["UPPER_CLASS"]["ADULT"]
-            
-            tmp_population[specie]["LOWER_CLASS"]["CHILDREN"] = self.population[specie]["LOWER_CLASS"]["CHILDREN"] * -1
-            tmp_population[specie]["LOWER_CLASS"]["ADULT"] = self.population[specie]["LOWER_CLASS"]["ADULT"] * -1
-            tmp_population[specie]["MIDDLE_CLASS"]["CHILDREN"] = self.population[specie]["MIDDLE_CLASS"]["CHILDREN"] * -1
-            tmp_population[specie]["MIDDLE_CLASS"]["ADULT"] = self.population[specie]["MIDDLE_CLASS"]["ADULT"] * -1
-            tmp_population[specie]["UPPER_CLASS"]["CHILDREN"] = self.population[specie]["UPPER_CLASS"]["CHILDREN"] * -1
-            tmp_population[specie]["UPPER_CLASS"]["ADULT"] = self.population[specie]["UPPER_CLASS"]["ADULT"] * -1
-
-        self.updatePopulations(tmp_population)
-
-    #Updates the sub-populations based on the main population. It also updates the build points, province size, and primary and secondary populations of the population
+            #print(self.population[specie]["LOWER_CLASS"]["CHILDREN"]) 
+            #tmp_population[specie]["LOWER_CLASS"]["CHILDREN"] = self.population[specie]["LOWER_CLASS"]["CHILDREN"] * -1
+            #tmp_population[specie]["LOWER_CLASS"]["ADULT"] = self.population[specie]["LOWER_CLASS"]["ADULT"] * -1
+            #tmp_population[specie]["MIDDLE_CLASS"]["CHILDREN"] = self.population[specie]["MIDDLE_CLASS"]["CHILDREN"] * -1
+            #tmp_population[specie]["MIDDLE_CLASS"]["ADULT"] = self.population[specie]["MIDDLE_CLASS"]["ADULT"] * -1
+            #tmp_population[specie]["UPPER_CLASS"]["CHILDREN"] = self.population[specie]["UPPER_CLASS"]["CHILDREN"] * -1
+            #tmp_population[specie]["UPPER_CLASS"]["ADULT"] = self.population[specie]["UPPER_CLASS"]["ADULT"] * -1
+        
+        self.updatePopulations(self.population)
+        
+    #Updates the sub-populations based on the main population. It does this by recalculating all sub-populations from the main population
+    #It also updates the build points, province size, and primary and secondary populations of the population
     def updatePopulations(self, population):
-        for specie in self.population:
-            self.population_specie[specie] = 0
-            for eco_status in self.population[specie]:
-                self.population_workers[eco_status] += self.population[specie][eco_status]["ADULT"]
-                for age in self.population[specie][eco_status]:
-                    self.population_total += population[specie][eco_status][age]
-                    self.population_specie[specie] += population[specie][eco_status][age]
+        #print(population["HUMANS"]["LOWER_CLASS"]["CHILDREN"])        
+        #Tmp variable so if the reduction is bigger than the current population, it won't change only half the population
+        #tmp_pop = {}
+        tmp_pop_total = 0
+        tmp_pop_specie = {}
+        tmp_pop_worker = {
+                "LOWER_CLASS" : 0,
+                "MIDDLE_CLASS" : 0,
+                "UPPER_CLASS" : 0
+                }
+
+        #Resets all the population totals
+       # self.population_total = 0
+        #for specie in self.population:
+           # self.population_specie[specie] = 0
+        #for eco_status in self.population_workers:
+          #  self.population_workers[eco_status] = 0
+        #print(self.population)
+        #print(population) 
+        for specie in population:
+            tmp_pop_specie[specie] = 0
+            #print(specie)
+            for eco_status in population[specie]:
+                #self.population_workers[eco_status] += self.population[specie][eco_status]["ADULT"]
+                tmp_pop_worker[eco_status] += population[specie][eco_status]["ADULT"]
+                for age in population[specie][eco_status]:
+                    #print(population[specie][eco_status][age])
+                    tmp_pop_total += population[specie][eco_status][age]
+                    #print(tmp_pop_specie[specie])
+                    tmp_pop_specie[specie] += population[specie][eco_status][age]
+                    #self.population_total += population[specie][eco_status][age]
+                    #self.population_specie[specie] += population[specie][eco_status][age]
+                    
+                    #print(specie, tmp_pop_specie)
+
+                    #Makes sure the population will not become negative
+                    cond1 = tmp_pop_total < 0
+                    cond2 = tmp_pop_specie[specie] < 0
+                    cond3 = tmp_pop_worker[eco_status] < 0
+                    if cond1 or cond2 or cond3:
+                        #print(tmp_pop_specie[specie])
+                        raise ArithmeticError
+        
+        self.population_total = tmp_pop_total
+        self.population_specie = tmp_pop_specie
+        self.population_workers = tmp_pop_worker
 
         #Calculates the primary and secondary specie of the province
         for specie in self.population_specie:
@@ -130,6 +234,10 @@ class Province:
         self.build_points_total = bonuses.PROVINCE_CONSTANTS["POP_BUILD_POINTS"][self.size]
         self.build_points_current = self.build_points_total - self.build_points_current
 
+    
+    #Updates the statistics of the province
+    def updateStats(self):
+        pass
 
     #A function to check if the province has the requisuite amount of build points and population requirements to construct
     def checkBuilding(self, building_name):
@@ -141,37 +249,67 @@ class Province:
                 name_found = True
 
         if name_found == False:
-            return False
+            raise KeyError
 
-        try:
-            if bonuses.BUILDINGS[building_name]["MATERIALS"]["BUILD_POINT"] > self.build_points_current:
-                return False
-        except KeyError: # If there is no Build Point entry, this means that the Building has no build point requirement
-            pass
+        #try:
+        if bonuses.BUILDINGS[building_name]["MATERIALS"]["BUILD_POINTS"] > self.build_points_current:
+            return False
+        #except KeyError: # If there is no Build Point entry, this means that the Building has no build point requirement
+            #pass
         
         max_building = bonuses.BUILDINGS[building_name]["POPULATION"][self.size]
 
         cond1 = max_building == -1 # If the max_building is equal to -1, it means the building can be built an infinite amount of times
-        cond2 = max_building >= self.buildings[building_name] #MIGHT NEED TO CHANGE LATER
+        cond2 = max_building >= self.buildings[building_name] + self.under_construction[building_name] #MIGHT NEED TO CHANGE LATER
 
         if cond1 or cond2:
             return True
         else:
             return False
+    
+    #Progresses a season
+    def progressSeason(self):
+        
+        #Reduces the time on all currently constructing buildings by 1 season
+        for construction in self.under_construction_list:
+            if self.under_construction_list[construction]["BUILDING?"]:
+                self.under_construction_list[construction]["SEASONS_LEFT"] -= 1
 
     def printInfo(self):
         print(f"Name: {self.name}")
         print(f"Population: {self.population_total}")
+        print("--------------------------------------------")
         
         for specie in self.population_specie:
             print(f"{specie} {self.population_specie[specie]}")
         
+        print("--------------------------------------------")
+        
         for workers in self.population_workers:
             print(f"{workers} {self.population_workers[workers]}")
+        
+        print("--------------------------------------------")
+        print("Buildings Built:")
+        for building in self.buildings:
+            print(f"{building} {self.buildings[building]}")
+        
+        print("--------------------------------------------") 
 
+        for constructions in self.under_construction_list:
+            print(f"{constructions} {self.under_construction_list[constructions]}")
+
+        print("--------------------------------------------")
+        print("Buildings Under Construction") 
+        for building in self.under_construction:
+            print(f"{building} {self.under_construction[building]}")
+
+        print("--------------------------------------------")
         print(self.primary_specie, self.secondary_specie)
+        print("--------------------------------------------")
         print(self.size, self.build_points_total)
-    
+        print("--------------------------------------------")
+        print("--------------------------------------------")
+        
 
 if __name__ == "__main__":
     #TEST POPULATION

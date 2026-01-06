@@ -67,12 +67,28 @@ def testPop():
             "COLOSSEUM" : 0,
             "CRADLE_OF_GODS" : 0
             }
+    
+    pop = {
+        "HUMANS" : {
+            "LOWER_CLASS" : {
+                "CHILDREN" : 500,
+                "ADULT" : 1000
+                },
+            "MIDDLE_CLASS" : {
+                "CHILDREN" : 300,
+                "ADULT" : 600
+                },
+            "UPPER_CLASS" : {
+                "CHILDREN" : 50,
+                "ADULT" : 100
+                }
+            }
+        }
 
     test_class = provinceClass.Province("test", example_population, example_building)
+    test_class.constructBuilding("POP_HOUSING", 250)
     test_class.printInfo()
-    test_class.addPopulation(example_population)
-    test_class.printInfo()
-    test_class.subtractPopulation(example_population)
+    test_class.progressSeason()
     test_class.printInfo()
 
 if __name__ == "__main__":
