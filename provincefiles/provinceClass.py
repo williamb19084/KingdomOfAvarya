@@ -38,7 +38,8 @@ class Province:
                 "WATER_ADV" : False,
                 "TRADE_SPEED" : 0,
                 "TRADE_PROFIT" : 0
-                } #IMPLEMENT
+                } 
+
         self.required_materials = {
                 "CONSTRUCTION_WORKERS" : 0,
                 "WATER" : 0,
