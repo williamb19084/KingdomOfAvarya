@@ -1422,11 +1422,20 @@ BUILDINGS = {
    },
 
    "POPULATION" : {
-     1 : 0,
-     2 : 1001,
-     4 : 2001,
-     6 : 15001,
-     10 : "MAX"
+     "HAMLET" : 1,
+     "VILLAGE" : 1,
+     "SETTLMENT" : 1,
+     "SMALL_TOWN" : 2,
+     "LARGE_TOWN" : 2,
+     "SMALL_CITY" : 3,
+     "MEDIUM_CITY" : 3,
+     "LARGE_CITY" : 4,
+     "MEGALOPOLIS" : 3
+     }
+     #2 : 1001,
+     #4 : 2001,
+     #6 : 15001,
+     #10 : "MAX"
    },
    "BENEFIT" : {
      "BENEFIT_LIST" : [
