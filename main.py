@@ -90,6 +90,8 @@ def testPop():
     test_class.printInfo()
     test_class.progressSeason()
     test_class.printInfo()
+    test_class.progressSeason()
+    test_class.printInfo()
 
 if __name__ == "__main__":
     testPop()

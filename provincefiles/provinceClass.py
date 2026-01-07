@@ -13,7 +13,32 @@ class Province:
         self.name = name
         self.population = population
         self.buildings = buildings
-        self.stats = {} #IMPLEMENT
+        self.stats = {
+                "DEFENSE" : 0,
+                "SATISFACTION_LOWER_CLASS" : 0,
+                "SATISFACTION_MIDDLE_CLASS" : 0,
+                "SATISFACTION_UPPER_CLASS" : 0,
+                "PIETY" : {
+                    },
+                "OVERPOPULATED" : False,
+                "HOUSES" : 0,
+                "MILITARY_TRAINING" : 0,
+                "MILITARY_ENTERTAINMENT" : False,
+                "MILITARY_PRESENT" : False,
+                "PRODUCTION_ADV" : 0,
+                "ENTERTAINMENT_PRODUCTION" : 0,
+                "LUMBER_PRODUCTION" : 0,
+                "LIVESTOCK_PRODUCTION" : 0,
+                "CROP_PRODUCTION" : 0,
+                "WATER_PRODUCTION" : 0,
+                "LUMBER_ADV" : False,
+                "CROP_ADV" : False,
+                "LIVESTOCK_ADV" : False,
+                "MINERALS_ADV" : False,
+                "WATER_ADV" : False,
+                "TRADE_SPEED" : 0,
+                "TRADE_PROFIT" : 0
+                } #IMPLEMENT
         self.required_materials = {
                 "CONSTRUCTION_WORKERS" : 0,
                 "WATER" : 0,
@@ -50,7 +75,7 @@ class Province:
                 "MINERALS" : 0,
                 "CROPS" : 0
                 }
-
+        self.acres
         self.population_total = 0
         self.population_specie = {}
         self.population_workers = {
@@ -115,6 +140,7 @@ class Province:
         entry = building_name + "_" + str(self.under_construction[building_name])
         self.under_construction[building_name] += 1 #Increments the amount of this type of building being built
         self.under_construction_list[entry] = {
+                "BUILDING_TYPE" : building_name,
                 "WORKERS" : workers,
                 "SEASONS_LEFT" : construction_time,
                 "BUILDING?" : True
@@ -122,8 +148,20 @@ class Province:
         self.upkeep["WORKERS"] += workers
 
     #Any buildings that have finished constructing are added to the building list
-    def addBuildings():
-        pass
+    def addBuildings(self):
+        buildings_completed = []
+        for building in self.under_construction_list:
+            if self.under_construction_list[building]["SEASONS_LEFT"] == 0: #Zero in SEASONS_LEFT means the building has completed construction
+                building_name = self.under_construction_list[building]["BUILDING_TYPE"]
+                self.buildings[building_name] += 1
+                self.under_construction[building_name] -= 1
+                buildings_completed.append(building)
+                #self.under_construction_list.pop(building)
+        
+        #Removes completed buildings from the under construction list
+        for completed_buildings in buildings_completed:
+            self.under_construction_list.pop(completed_buildings)
+
 
     #Removes a building from the buildings already constructed
     def destroyBuilding(self, building_name):
@@ -238,6 +276,10 @@ class Province:
     #Updates the statistics of the province
     def updateStats(self):
         pass
+    
+    #Updates acreage when the size increases
+    def updateAcreage(self):
+        pass
 
     #A function to check if the province has the requisuite amount of build points and population requirements to construct
     def checkBuilding(self, building_name):
@@ -274,6 +316,8 @@ class Province:
         for construction in self.under_construction_list:
             if self.under_construction_list[construction]["BUILDING?"]:
                 self.under_construction_list[construction]["SEASONS_LEFT"] -= 1
+
+        self.addBuildings()
 
     def printInfo(self):
         print(f"Name: {self.name}")

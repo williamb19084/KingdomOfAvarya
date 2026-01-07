@@ -1660,3 +1660,309 @@ PROVINCE_CONSTANTS = {
       "MEGALOPOLIS" : 50
   }
 }
+
+GODS = {
+        "MAKOTHA" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .75
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_ADDITION" : -.01
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_INCREASE" : -.3,
+                    "ADULT_GAIN_INCREASE" : .1
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "CASUALTY_INCREASE" : -.05
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_ADDITION" : -.1
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_INCREASE" : -.5
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "CASUALTY_INCREASE" : .01
+                    },
+                "ANGERED" : {
+                    "NATURAL_DEATH_INCREASE" : .05
+                    },
+                "ENRAGED" : {
+                    "NATURAL_DEATH_ADDITION" : .01
+                    }
+                },
+            "RIVAL" : "TIAMAT"
+            },
+
+        "CYNTHI" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "ADULT_GAIN_ADDITION" : .01
+                    },
+                "MAJOR" : {
+                    "CHILD_GAIN_ADDITION" : .01
+                    },
+                "EXALTED" : {
+                    "ADULT_GAIN_INCREASE" : .25,
+                    "CHILD_GAIN_INCREASE" : .25
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "ADULT_GAIN_INCREASE" : .15
+                    },
+                "MAJOR" : {
+                    "CHILD_GAIN_INCREASE" : .15
+                    },
+                "EXALTED" : {
+                    "ADULT_GAIN_ADDITION" : .01,
+                    "CHILD_GAIN_ADDITION" : .01
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "ADULT_GAIN_INCREASE" : -.1
+                    },
+                "ANGERED" : {
+                    "CHILD_GAIN_INCREASE" : -.1
+                    },
+                "ENRAGED" : {
+                    "CHILD_GAIN_INCREASE" : -.1
+                    }
+                },
+            "RIVAL" : "SZETH"
+            },
+
+        "BELSOYU" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "COMPANY_UPGRADE_INCREASE" : -.1
+                    },
+                "MAJOR" : {
+                    "TRADE_SPEED" : .15
+                    },
+                "EXALTED" : {
+                    "TRADE_PROFIT" : .2
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "TRADE_PROFIT" : .05
+                    },
+                "MAJOR" : {
+                    "LOGISTICS_CAPACITY_INCREASE" : 75
+                    },
+                "EXALTED" : {
+                    "TRADE_SPEED" : .15
+                    "CONSTRUCTION_TAX" : True
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "TRADE_PROFIT" : -.1
+                    },
+                "ANGERED" : {
+                    "TRADE_SPEED" : -.2
+                    },
+                "ENRAGED" : {
+                    "LOGISTICS_CAPACITY_INCREASE" : -25
+                    }
+                },
+            "RIVAL" : "NYANITI"
+            },
+
+        "MAKOTHA" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .75
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_SUBTRACTION" : .01
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_REDUCTION" : .3,
+                    "ADULT_GAIN_INCREASE" : .1
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .05
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_SUBTRACTION" : .1
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_REDUCTION" : .5
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "CASUALTY_INCREASE" : .1
+                    },
+                "ANGERED" : {
+                    "NATURAL_DEATH_INCREASE" : .05
+                    },
+                "ENRAGED" : {
+                    "NATURAL_DEATH_ADDITION" : .01
+                    }
+                }
+            },
+
+        "MAKOTHA" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .75
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_SUBTRACTION" : .01
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_REDUCTION" : .3,
+                    "ADULT_GAIN_INCREASE" : .1
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .05
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_SUBTRACTION" : .1
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_REDUCTION" : .5
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "CASUALTY_INCREASE" : .1
+                    },
+                "ANGERED" : {
+                    "NATURAL_DEATH_INCREASE" : .05
+                    },
+                "ENRAGED" : {
+                    "NATURAL_DEATH_ADDITION" : .01
+                    }
+                }
+            },
+
+        "MAKOTHA" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .75
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_SUBTRACTION" : .01
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_REDUCTION" : .3,
+                    "ADULT_GAIN_INCREASE" : .1
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .05
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_SUBTRACTION" : .1
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_REDUCTION" : .5
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "CASUALTY_INCREASE" : .1
+                    },
+                "ANGERED" : {
+                    "NATURAL_DEATH_INCREASE" : .05
+                    },
+                "ENRAGED" : {
+                    "NATURAL_DEATH_ADDITION" : .01
+                    }
+                }
+            },
+
+        "MAKOTHA" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .75
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_SUBTRACTION" : .01
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_REDUCTION" : .3,
+                    "ADULT_GAIN_INCREASE" : .1
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .05
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_SUBTRACTION" : .1
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_REDUCTION" : .5
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "CASUALTY_INCREASE" : .1
+                    },
+                "ANGERED" : {
+                    "NATURAL_DEATH_INCREASE" : .05
+                    },
+                "ENRAGED" : {
+                    "NATURAL_DEATH_ADDITION" : .01
+                    }
+                }
+            },
+
+        "MAKOTHA" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .75
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_SUBTRACTION" : .01
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_REDUCTION" : .3,
+                    "ADULT_GAIN_INCREASE" : .1
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "CASUALTY_REDUCTION" : .05
+                    },
+                "MAJOR" : {
+                    "NATURAL_DEATH_SUBTRACTION" : .1
+                    },
+                "EXALTED" : {
+                    "NATURAL_DEATH_REDUCTION" : .5
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "CASUALTY_INCREASE" : .1
+                    },
+                "ANGERED" : {
+                    "NATURAL_DEATH_INCREASE" : .05
+                    },
+                "ENRAGED" : {
+                    "NATURAL_DEATH_ADDITION" : .01
+                    }
+                }
+            }
+        }
+
+
+
+
