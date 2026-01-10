@@ -1777,190 +1777,287 @@ GODS = {
             "RIVAL" : "NYANITI"
             },
 
-        "MAKOTHA" : {
+        "Browden" : {
             "SETTLEMENT" : {
                 "MINOR" : {
-                    "CASUALTY_REDUCTION" : .75
+                    "INDEPTH_WORK_PROVINCE" : True,
+                    "REPUTATION_ADV" : True
                     },
                 "MAJOR" : {
-                    "NATURAL_DEATH_SUBTRACTION" : .01
+                    "SATISFACTION" : 3
                     },
                 "EXALTED" : {
-                    "NATURAL_DEATH_REDUCTION" : .3,
-                    "ADULT_GAIN_INCREASE" : .1
+                    "CONSTRUCTION_SPEED" : -.3,
+                    "MILITARY_TRAINING" : -.3
                     }
                 },
             "STATE" : {
                 "MINOR" : {
-                    "CASUALTY_REDUCTION" : .05
+                    "LOCAL_REP_PRODUCTION" : 10,
+                    "INTERNATIONAL_REP_PRODUCTION" : 8
                     },
                 "MAJOR" : {
-                    "NATURAL_DEATH_SUBTRACTION" : .1
+                    "CONSTRUCTION_SPEED" : -.2,
+                    "MILITARY_TRAINING" : -.2
                     },
                 "EXALTED" : {
-                    "NATURAL_DEATH_REDUCTION" : .5
+                    "INDEPTH_WORK_PROVINCE" : True,
+                    "COMPANY_WORK_FULL" : True,
+                    "LOCAL_REP_PRODUCTION" : 15,
+                    "INTERNATIONAL_REP_PRODUCTION" : 12
                     }
                 },
             "DETRIMENT" : {
                 "IRATE" : {
-                    "CASUALTY_INCREASE" : .1
+                    "MILITARY_TRAINING" : .1
                     },
                 "ANGERED" : {
-                    "NATURAL_DEATH_INCREASE" : .05
+                    "CONSTRUCTION_SPEED" : .1
                     },
                 "ENRAGED" : {
-                    "NATURAL_DEATH_ADDITION" : .01
+                    "SATISFACTION" : -3
+                    }
+                },
+            "RIVAL" : "GILGAMESH"
+            },
+
+        "GILGAMESH" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "EXTRA_RANK" : 1
+                    },
+                "MAJOR" : {
+                    "MILITARY_WORKERS" : True
+                    },
+                "EXALTED" : {
+                    "MILITARY_TRAINING" : -.5
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "DEFENSE" : 3
+                    },
+                "MAJOR" : {
+                    "ARMY_DEFENSE" : 3,
+                    "ARMY_OFFENSE" : 3,
+                    "MILITARY_SPEED" : .25
+                    },
+                "EXALTED" : { 
+                    "ARMY_DEFENSE" : 5,
+                    "ARMY_OFFENSE" : 5,
+                    "MILITARY_SPEED" : .5
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "DEFENSE" : -2
+                    },
+                "ANGERED" : {
+                    "MILITARY_DEFENSE" : -2,
+                    "MILITARY_OFFENSE" : -2
+                    },
+                "ENRAGED" : {
+                    "MILITARY_DEFENSE" : -4,
+                    "MILITARY_OFFENSE" : -4
+                    }
+                },
+            "RIVAL" : "BROWDEN"
+            },
+
+        "Nyaniti" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "SATISFACTION_LOWER_CLASS" : -1,
+                    "LUMBER_PRODUCTION" : .2,
+                    "WATER_PRODUCTION" : .2,
+                    "CROP_PRODUCTION" : .2,
+                    "LIVESTOCK_PRODUCTION" : .2,
+                    "MINERAL_PRODUCTION" : .2,
+                    "ENTERTAINMENT_PRODUCTION" : .2
+                    },
+                "MAJOR" : {
+                    "SATISFACTION_LOWER_CLASS" : -2,
+                    "SATISFACTION_MIDDLE_CLASS" : -1,
+                    "CONSTRUCTION_SPEED" : .4
+                    },
+                    
+                "EXALTED" : {
+                    "SATISFACTION_LOWER_CLASS" : -2,
+                    "SATISFACTION_MIDDLE_CLASS" : -2,
+                    "SATISFACTION_UPPER_CLASS" : -2,
+                    "LUMBER_PRODUCTION" : .2,
+                    "WATER_PRODUCTION" : .2,
+                    "CROP_PRODUCTION" : .2,
+                    "LIVESTOCK_PRODUCTION" : .2,
+                    "MINERAL_PRODUCTION" : .2,
+                    "ENTERTAINMENT_PRODUCTION" : .2
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "SATISFACTION_LOWER_CLASS" : -1,
+                    "CONSTRUCTION_SPEED" : .1
+                    },
+                "MAJOR" : {
+                    "SATISFACTION_LOWER_CLASS" : -1,
+                    "SATISFACTION_MIDDLE_CLASS" : -1,
+                    "SATISFACTION_UPPER_CLASS" : -1,
+                    "LUMBER_PRODUCTION" : .4,
+                    "WATER_PRODUCTION" : .4,
+                    "CROP_PRODUCTION" : .4,
+                    "LIVESTOCK_PRODUCTION" : .4,
+                    "MINERAL_PRODUCTION" : .4,
+                    "ENTERTAINMENT_PRODUCTION" : .4,
+                    "CONSTRUCTION_SPEED" : .1
+                    },
+                "EXALTED" : {
+                    "MAXIMUM_TAX_RATE" : 1.0
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "SATISFACTION_LOWER_CLASS" : 1,
+                    "SATISFACTION_MIDDLE_CLASS" : -1,
+                    "SATISFACTION_UPPER_CLASS" : -2
+                    },
+                "ANGERED" : {
+                    "SATISFACTION_LOWER_CLASS" : 1,
+                    "LUMBER_PRODUCTION" : -.1,
+                    "WATER_PRODUCTION" : -.1,
+                    "CROP_PRODUCTION" : -.1,
+                    "LIVESTOCK_PRODUCTION" : -.1,
+                    "MINERAL_PRODUCTION" : -.1,
+                    "ENTERTAINMENT_PRODUCTION" : -.1,
+                    "CONSTRUCTION_SPEED" : -.1
+                    },
+                "ENRAGED" : {
+                    "SATISFACTION_LOWER_CLASS" : 2,
+                    "LUMBER_PRODUCTION" : -.15,
+                    "WATER_PRODUCTION" : -.15,
+                    "CROP_PRODUCTION" : -.15,
+                    "LIVESTOCK_PRODUCTION" : -.15,
+                    "MINERAL_PRODUCTION" : -.15,
+                    "ENTERTAINMENT_PRODUCTION" : -.15,
+                    "CONSTRUCTION_SPEED" : -.15
+                    }
+                },
+            "RIVAL" : "BELSOYU"
+            },
+
+        "SZETH" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "REPUTATION_BONUS" : 5,
+                    "ESPIONAGE_BONUS" : 5,
+                    "EXTRA_TAX" : .05
+                    },
+                "MAJOR" : {
+                    "EXTRA_TAX" : .2
+                    },
+                "EXALTED" : {
+                    "PIETY_SZETH" : 20
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "CONSTRUCTION_TAX" : True,
+                    "MILITARY_TAX" : True
+                    },
+                "MAJOR" : {
+                    "MONEY_INTEREST" : .1
+                    },
+                "EXALTED" : {
+                    "MONEY_INTEREST" : .05,
+                    "MILITARY_MOVE_LAST" : True
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "SALES_TAX" : -.1
+                    },
+                "ANGERED" : {
+                    "PRODUCTION_TAX" : -.1
+                    },
+                "ENRAGED" : {
+                    "SALES_TAX" : -.05,
+                    "PRODUCTION_TAX" : -.05
+                    }
+                },
+            "RIVAL" : "CYNTHI"
+            },
+
+        "TIAMAT" : {
+            "SETTLEMENT" : {
+                "MINOR" : {
+                    "EXTRA_RESOURCES_TOTAL" : True 
+                    },
+                "MAJOR" : {
+                    "EXTRA_POPULATION_TOTAL" : True
+                    },
+                "EXALTED" : {
+                    "LUMBER_PRODUCTION" : .05,
+                    "WATER_PRODUCTION" : .05,
+                    "CROP_PRODUCTION" : .05,
+                    "LIVESTOCK_PRODUCTION" : .05,
+                    "MINERAL_PRODUCTION" : .05,
+                    "ENTERTAINMENT_PRODUCTION" : .05,
+                    "CONSTRUCTION_SPEED" : .05,
+                    "ADULT_GAIN_INCREASE" : .05,
+                    "CHILD_GAIN_INCREASE" : .05,
+                    "NATURAL_DEATH_INCREASE" : -.05
+                    }
+                },
+            "STATE" : {
+                "MINOR" : {
+                    "LUMBER_PRODUCTION" : .05,
+                    "WATER_PRODUCTION" : .05,
+                    "CROP_PRODUCTION" : .05,
+                    "LIVESTOCK_PRODUCTION" : .05,
+                    "MINERAL_PRODUCTION" : .05,
+                    "ENTERTAINMENT_PRODUCTION" : .05,
+                    "CONSTRUCTION_SPEED" : .05
+                    },
+                "MAJOR" : { 
+                    "ADULT_GAIN_INCREASE" : .05,
+                    "CHILD_GAIN_INCREASE" : .05,
+                    "NATURAL_DEATH_INCREASE" : -.05
+                    },
+                "EXALTED" : { 
+                    "LUMBER_PRODUCTION" : .05,
+                    "WATER_PRODUCTION" : .05,
+                    "CROP_PRODUCTION" : .05,
+                    "LIVESTOCK_PRODUCTION" : .05,
+                    "MINERAL_PRODUCTION" : .05,
+                    "ENTERTAINMENT_PRODUCTION" : .05,
+                    "CONSTRUCTION_SPEED" : .05,
+                    "ADULT_GAIN_INCREASE" : .05,
+                    "CHILD_GAIN_INCREASE" : .05,
+                    "NATURAL_DEATH_INCREASE" : -.05
+                    }
+                },
+            "DETRIMENT" : {
+                "IRATE" : {
+                    "LUMBER_PRODUCTION" : -.05,
+                    "WATER_PRODUCTION" : -.05,
+                    "CROP_PRODUCTION" : -.05,
+                    "LIVESTOCK_PRODUCTION" : -.05,
+                    "MINERAL_PRODUCTION" : -.05,
+                    "ENTERTAINMENT_PRODUCTION" : -.05
+                    },
+                "ANGERED" : {
+                    "LUMBER_PRODUCTION" : -.05,
+                    "WATER_PRODUCTION" : -.05,
+                    "CROP_PRODUCTION" : -.05,
+                    "LIVESTOCK_PRODUCTION" : -.05,
+                    "MINERAL_PRODUCTION" : -.05,
+                    "ENTERTAINMENT_PRODUCTION" : -.05
+                    },
+                "ENRAGED" : {
+                    "CONSTRUCTION_SPEED" : -.25
                     }
                 }
             },
-
-        "MAKOTHA" : {
-            "SETTLEMENT" : {
-                "MINOR" : {
-                    "CASUALTY_REDUCTION" : .75
-                    },
-                "MAJOR" : {
-                    "NATURAL_DEATH_SUBTRACTION" : .01
-                    },
-                "EXALTED" : {
-                    "NATURAL_DEATH_REDUCTION" : .3,
-                    "ADULT_GAIN_INCREASE" : .1
-                    }
-                },
-            "STATE" : {
-                "MINOR" : {
-                    "CASUALTY_REDUCTION" : .05
-                    },
-                "MAJOR" : {
-                    "NATURAL_DEATH_SUBTRACTION" : .1
-                    },
-                "EXALTED" : {
-                    "NATURAL_DEATH_REDUCTION" : .5
-                    }
-                },
-            "DETRIMENT" : {
-                "IRATE" : {
-                    "CASUALTY_INCREASE" : .1
-                    },
-                "ANGERED" : {
-                    "NATURAL_DEATH_INCREASE" : .05
-                    },
-                "ENRAGED" : {
-                    "NATURAL_DEATH_ADDITION" : .01
-                    }
-                }
-            },
-
-        "MAKOTHA" : {
-            "SETTLEMENT" : {
-                "MINOR" : {
-                    "CASUALTY_REDUCTION" : .75
-                    },
-                "MAJOR" : {
-                    "NATURAL_DEATH_SUBTRACTION" : .01
-                    },
-                "EXALTED" : {
-                    "NATURAL_DEATH_REDUCTION" : .3,
-                    "ADULT_GAIN_INCREASE" : .1
-                    }
-                },
-            "STATE" : {
-                "MINOR" : {
-                    "CASUALTY_REDUCTION" : .05
-                    },
-                "MAJOR" : {
-                    "NATURAL_DEATH_SUBTRACTION" : .1
-                    },
-                "EXALTED" : {
-                    "NATURAL_DEATH_REDUCTION" : .5
-                    }
-                },
-            "DETRIMENT" : {
-                "IRATE" : {
-                    "CASUALTY_INCREASE" : .1
-                    },
-                "ANGERED" : {
-                    "NATURAL_DEATH_INCREASE" : .05
-                    },
-                "ENRAGED" : {
-                    "NATURAL_DEATH_ADDITION" : .01
-                    }
-                }
-            },
-
-        "MAKOTHA" : {
-            "SETTLEMENT" : {
-                "MINOR" : {
-                    "CASUALTY_REDUCTION" : .75
-                    },
-                "MAJOR" : {
-                    "NATURAL_DEATH_SUBTRACTION" : .01
-                    },
-                "EXALTED" : {
-                    "NATURAL_DEATH_REDUCTION" : .3,
-                    "ADULT_GAIN_INCREASE" : .1
-                    }
-                },
-            "STATE" : {
-                "MINOR" : {
-                    "CASUALTY_REDUCTION" : .05
-                    },
-                "MAJOR" : {
-                    "NATURAL_DEATH_SUBTRACTION" : .1
-                    },
-                "EXALTED" : {
-                    "NATURAL_DEATH_REDUCTION" : .5
-                    }
-                },
-            "DETRIMENT" : {
-                "IRATE" : {
-                    "CASUALTY_INCREASE" : .1
-                    },
-                "ANGERED" : {
-                    "NATURAL_DEATH_INCREASE" : .05
-                    },
-                "ENRAGED" : {
-                    "NATURAL_DEATH_ADDITION" : .01
-                    }
-                }
-            },
-
-        "MAKOTHA" : {
-            "SETTLEMENT" : {
-                "MINOR" : {
-                    "CASUALTY_REDUCTION" : .75
-                    },
-                "MAJOR" : {
-                    "NATURAL_DEATH_SUBTRACTION" : .01
-                    },
-                "EXALTED" : {
-                    "NATURAL_DEATH_REDUCTION" : .3,
-                    "ADULT_GAIN_INCREASE" : .1
-                    }
-                },
-            "STATE" : {
-                "MINOR" : {
-                    "CASUALTY_REDUCTION" : .05
-                    },
-                "MAJOR" : {
-                    "NATURAL_DEATH_SUBTRACTION" : .1
-                    },
-                "EXALTED" : {
-                    "NATURAL_DEATH_REDUCTION" : .5
-                    }
-                },
-            "DETRIMENT" : {
-                "IRATE" : {
-                    "CASUALTY_INCREASE" : .1
-                    },
-                "ANGERED" : {
-                    "NATURAL_DEATH_INCREASE" : .05
-                    },
-                "ENRAGED" : {
-                    "NATURAL_DEATH_ADDITION" : .01
-                    }
-                }
-            }
+         "RIVAL" : "MAKOTHA"
         }
 
 
