@@ -1,6 +1,7 @@
 # A file that contains the class definition for a province
 #Imports the constants
 import sys
+import random
 sys.path.append("..")
 
 from constantfiles import bonuses
@@ -8,17 +9,29 @@ from constantfiles import bonuses
 class Province:
     
     #The population variable is a dictionary in a dictionary in a dictionary
-    def __init__(self, name, population, buildings):
+    def __init__(self, name, population, buildings, terrain):
         self.counter = 0
+        self.size_acres = None
         self.name = name
         self.population = population
         self.buildings = buildings
+        self.terrain = terrain
+        self.terrain_bonuses = bonuses.TILES_CONSTANTS[terrain]
+        #self.primary_resource = primary_resource
         self.stats = {
                 "DEFENSE" : 0,
                 "SATISFACTION_LOWER_CLASS" : 0,
                 "SATISFACTION_MIDDLE_CLASS" : 0,
                 "SATISFACTION_UPPER_CLASS" : 0,
                 "PIETY" : {
+                    "MAKOTHA" : 0,
+                    "CYNTHI" : 0,
+                    "BELSOYU" : 0,
+                    "BROWDEN" : 0,
+                    "GILGAMESH" : 0,
+                    "NYANITI" : 0,
+                    "SZETH" : 0,
+                    "TIAMAT" : 0
                     },
                 "OVERPOPULATED" : False,
                 "HOUSES" : 0,
@@ -48,7 +61,8 @@ class Province:
                 "MINERLAS" : 0,
                 "CROPS" : 0
                 }
-        
+    
+
         self.under_construction = {
                 "POP_HOUSING" : 0,
                 "CHAPEL" : 0,
@@ -76,10 +90,40 @@ class Province:
                 "MINERALS" : 0,
                 "CROPS" : 0
                 }
-        self.acres
+        self.acres = {
+                "CROPS" : {
+                    "ACRES" : 0,
+                    "BONUS" : 0,
+                    },
+                "WATER" : {
+                    "ACRES" : 0,
+                    "BONUS" : 0,
+                    },
+                "LIVESTOCK" : {
+                    "ACRES" : 0,
+                    "BONUS" : 0,
+                    },
+                "ENTERTAINMENT" : {
+                    "ACRES" : 0,
+                    "BONUS" : 0,
+                    },
+                "MINERALS" : {
+                    "ACRES" : 0,
+                    "BONUS" : 0,
+                    },
+                "LUMBER" : {
+                    "ACRES" : 0,
+                    "BONUS" : 0,
+                    }
+                }
         self.population_total = 0
         self.population_specie = {}
         self.population_workers = {
+                "LOWER_CLASS" : 0,
+                "MIDDLE_CLASS" : 0,
+                "UPPER_CLASS" : 0
+                }
+        self.used_workers = {
                 "LOWER_CLASS" : 0,
                 "MIDDLE_CLASS" : 0,
                 "UPPER_CLASS" : 0
@@ -93,6 +137,9 @@ class Province:
         
         #Calculates all sub populations
         self.updatePopulations(population)
+        
+        #Calculates acreage
+        self.createAcreage()
 
         # Calculates what size the province is
         # Also calculates other populations totals that are useful
@@ -170,22 +217,43 @@ class Province:
         if self.buildings[building_name] == 0:
             raise ValueError
         self.buildings[building_name] -= 1
-    
+   
+    #Updates the population when they grow
+    def growPopulation(self):
+        new_population = {} 
+        #print(self.population) 
+        for specie in self.population:
+            new_population[specie] = {} #Need to initialize dictionaries for each level of the key
+            for eco_status in self.population[specie]:
+                new_population[specie][eco_status] = {}
+                current_pop_adult = self.population[specie][eco_status]["ADULT"]
+                current_pop_children = self.population[specie][eco_status]["CHILDREN"]
+                new_kids = int(current_pop_adult * bonuses.SPECIES_POP[specie]["REPRODUCTION_RATE"]) 
+                new_adults = int(current_pop_children * bonuses.SPECIES_POP[specie]["GROWTH_RATE"])
+                dead_adults = int(current_pop_adult * bonuses.SPECIES_POP[specie]["DEATH_RATE"])
+                new_population[specie][eco_status]["CHILDREN"] = new_kids - new_adults
+                new_population[specie][eco_status]["ADULT"] = new_adults - dead_adults
+        #print(new_population)
+        #print(self.population)
+        self.addPopulation(new_population)
+
     #Adds to the population of the province
     def addPopulation(self, population):
         for specie in population:
             #print(specie)
-            self.population[specie]["LOWER_CLASS"]["CHILDREN"] += self.population[specie]["LOWER_CLASS"]["CHILDREN"]
+            self.population[specie]["LOWER_CLASS"]["CHILDREN"] += population[specie]["LOWER_CLASS"]["CHILDREN"]
             self.population[specie]["LOWER_CLASS"]["ADULT"] += population[specie]["LOWER_CLASS"]["ADULT"]
             self.population[specie]["MIDDLE_CLASS"]["CHILDREN"] += population[specie]["MIDDLE_CLASS"]["CHILDREN"]
             self.population[specie]["MIDDLE_CLASS"]["ADULT"] += population[specie]["MIDDLE_CLASS"]["ADULT"]
             self.population[specie]["UPPER_CLASS"]["CHILDREN"] += population[specie]["UPPER_CLASS"]["CHILDREN"]
             self.population[specie]["UPPER_CLASS"]["ADULT"] += population[specie]["UPPER_CLASS"]["ADULT"]
-        self.updatePopulations(population)
+        
+        #print(population)
+        self.updatePopulations(self.population)
 
     #Removes the population of the province 
     def subtractPopulation(self, population): 
-        tmp_population = self.population
+        #tmp_population = self.population
 
         for specie in population:
             #print(self.population[specie]["LOWER_CLASS"]["CHILDREN"], population[specie]["LOWER_CLASS"]["CHILDREN"])
@@ -248,7 +316,7 @@ class Province:
                     cond2 = tmp_pop_specie[specie] < 0
                     cond3 = tmp_pop_worker[eco_status] < 0
                     if cond1 or cond2 or cond3:
-                        #print(tmp_pop_specie[specie])
+                        print(eco_status, cond1, cond2, cond3)
                         raise ArithmeticError
         
         self.population_total = tmp_pop_total
@@ -273,14 +341,86 @@ class Province:
         self.build_points_total = bonuses.PROVINCE_CONSTANTS["POP_BUILD_POINTS"][self.size]
         self.build_points_current = self.build_points_total - self.build_points_current
 
-    
     #Updates the statistics of the province
     def updateStats(self):
         pass
     
-    #Updates acreage when the size increases
-    def updateAcreage(self):
+    #Assigns workers to resources with validation
+    def assignWorkers(self, assignment):
         pass
+
+    #Updates the acreage of the province by keeping the acres percentage roughly the same
+    def updateAcreage(self):
+        if self.size != self.size_acres:
+            
+            acres_more_percent = random.randint(1, bonuses.ACRES_RANDOM_MAX) / 100
+            new_total_acres = (bonuses.PROVINCE_CONSTANTS["ACRES_BASE"][self.size])
+            new_total_acres += (bonuses.PROVINCE_CONSTANTS["ACRES_BASE"][self.size] * acres_more_percent)
+            new_total_acres = int(new_total_acres)
+            total_acres_left = new_total_acres            
+            for resource in self.acres:
+                #print(self.acres[resource])
+                percent_allocated = self.acres[resource]["ACRES"] / self.total_acres
+                acres_allocated = int(new_total_acres * percent_allocated)
+                total_acres_left -= acres_allocated
+                self.acres[resource]["ACRES"] = acres_allocated
+            
+            self.acres[self.terrain_bonuses["PRIMARY_RESOURCE"]]["ACRES"] += total_acres_left
+            self.total_acres = new_total_acres
+            self.size_acres = self.size
+
+    #Creates acreage at initlization, with a bit of randomness
+    def createAcreage(self):
+        acres_more_percent = random.randint(1, bonuses.ACRES_RANDOM_MAX) / 100
+        self.total_acres = (bonuses.PROVINCE_CONSTANTS["ACRES_BASE"][self.size])
+        self.total_acres += (bonuses.PROVINCE_CONSTANTS["ACRES_BASE"][self.size] * acres_more_percent)
+        self.total_acres = int(self.total_acres)
+        total_acres_left = self.total_acres
+            
+        total_percent_left = 1 - bonuses.PRIMARY_RESOURCE_BONUS - bonuses.SECONDARY_RESOURCE_BONUS
+        percent_allocated = {
+                "CROPS" : 0,
+                "MINERALS" : 0,
+                "WATER" : 0,
+                "LIVESTOCK" : 0,
+                "LUMBER" : 0,
+                "ENTERTAINMENT" : 0
+                }
+        percent_allocated[self.terrain_bonuses["PRIMARY_RESOURCE"]] += bonuses.PRIMARY_RESOURCE_BONUS
+        percent_allocated[self.terrain_bonuses["SECONDARY_RESOURCE"]] += bonuses.SECONDARY_RESOURCE_BONUS
+
+        #Chooses a random resource to start increasing the percent of acres allocated to those resources, then loops through the all the resources, increasing the percent of acres allocated a little bit at a time
+        skiped = random.randint(0,5) #It is 0 to 5 so each resource will be skipped only one time
+        while total_percent_left != 0:
+           for resource in self.acres:
+                if skiped != 0:
+                    skiped -= 1
+                    
+                else:
+                    percent_added = random.randint(1,2) / 100.0 #The number 2 is an arbitrary number, it could be any single digit number
+                    percent_allocated[resource] += percent_added
+                    total_percent_left -= percent_added
+                        
+                    #Checks if the total percent of acres allocated is over 100%
+                    if total_percent_left < 0:
+                        percent_allocated[resource] += total_percent_left
+                        total_percent_left = 0
+
+        #Allocates the acres, then determines their bonus
+        for resource in self.acres:
+            acres_allocated = int(self.total_acres * percent_allocated[resource])
+            #print(percent_allocated[resource])
+            self.acres[resource]["ACRES"] = acres_allocated
+            total_acres_left -= acres_allocated
+
+            self.acres[resource]["BONUS"] = bonuses.BASE_BONUS_RESOURCE - random.randint(1,4)
+
+        #Adds/Subtract any leftover acres to the primary resource
+        self.acres[self.terrain_bonuses["PRIMARY_RESOURCE"]]["ACRES"] += int(total_acres_left)
+        
+        #Sets the primary resource to a standardize bonus
+        self.acres[self.terrain_bonuses["PRIMARY_RESOURCE"]]["BONUS"] = bonuses.PRIMARY_RESOURCE_BONUS_MOD
+        self.acres[self.terrain_bonuses["SECONDARY_RESOURCE"]]["BONUS"] = bonuses.SECONDARY_RESOURCE_BONUS_MOD
 
     #A function to check if the province has the requisuite amount of build points and population requirements to construct
     def checkBuilding(self, building_name):
@@ -310,9 +450,12 @@ class Province:
         else:
             return False
     
-    #Progresses a season
+    #Progresses a season and returns how much money was made
     def progressSeason(self):
         
+        self.growPopulation()
+        self.updateAcreage()
+
         #Reduces the time on all currently constructing buildings by 1 season
         for construction in self.under_construction_list:
             if self.under_construction_list[construction]["BUILDING?"]:
@@ -323,6 +466,12 @@ class Province:
     def printInfo(self):
         print(f"Name: {self.name}")
         print(f"Population: {self.population_total}")
+        print("--------------------------------------------")
+        
+        print(f"Total Acres {self.total_acres}")
+        for resource in self.acres:
+            print(f"{resource} {self.acres[resource]}")
+
         print("--------------------------------------------")
         
         for specie in self.population_specie:

@@ -85,13 +85,16 @@ def testPop():
             }
         }
 
-    test_class = provinceClass.Province("test", example_population, example_building)
-    test_class.constructBuilding("POP_HOUSING", 250)
+    terrain = "MOUNTAINS"
+
+    test_class = provinceClass.Province("test", example_population, example_building, terrain)
+    #test_class.constructBuilding("POP_HOUSING", 250)
     test_class.printInfo()
-    test_class.progressSeason()
+    for i in range(0,100):
+        test_class.progressSeason()
     test_class.printInfo()
-    test_class.progressSeason()
-    test_class.printInfo()
+    #test_class.progressSeason()
+    #test_class.printInfo()
 
 if __name__ == "__main__":
     testPop()

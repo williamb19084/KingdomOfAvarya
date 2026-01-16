@@ -9,6 +9,17 @@ MEDIUM_CITY_POP = 40001
 LARGE_CITY_POP = 100001
 MEGALOPOLIS_POP = 200001
 
+ACRES_RANDOM_MAX = 20
+ACRES_BASE_PERCENT = .05
+ACRES_MIN_PERCENT = .01
+ACRES_MAX_PERCENT = .09
+PRIMARY_RESOURCE_BONUS = .12
+SECONDARY_RESOURCE_BONUS = .04
+
+BASE_BONUS_RESOURCE = 2
+PRIMARY_RESOURCE_BONUS_MOD = 2
+SECONDARY_RESOURCE_BONUS_MOD = 1
+
 PLAYER_CLASS_BONUSES = {
         "ARTIFICER" : {
           "BONUSES" : {
@@ -1431,12 +1442,11 @@ BUILDINGS = {
      "MEDIUM_CITY" : 3,
      "LARGE_CITY" : 4,
      "MEGALOPOLIS" : 3
-     }
+     },
      #2 : 1001,
      #4 : 2001,
      #6 : 15001,
      #10 : "MAX"
-   },
    "BENEFIT" : {
      "BENEFIT_LIST" : [
        "SATISFACTION_LOWER_CLASS",
@@ -1658,8 +1668,21 @@ PROVINCE_CONSTANTS = {
       "MEDIUM_CITY" : 20,
       "LARGE_CITY" : 30,
       "MEGALOPOLIS" : 50
-  }
+  },
+
+  "ACRES_BASE" : {
+      "HAMLET" : 125,
+      "VILLAGE" : 250,
+      "SETTLEMENT" : 500,
+      "SMALL_TOWN" : 1250,
+      "LARGE_TOWN" : 3750,
+      "SMALL_CITY" : 10000,
+      "MEDIUM_CITY" : 25000,
+      "LARGE_CITY" : 50000,
+      "MEGALOPOLIS" : 100000
+      }
 }
+
 
 GODS = {
         "MAKOTHA" : {
@@ -1759,7 +1782,7 @@ GODS = {
                     "LOGISTICS_CAPACITY_INCREASE" : 75
                     },
                 "EXALTED" : {
-                    "TRADE_SPEED" : .15
+                    "TRADE_SPEED" : .15,
                     "CONSTRUCTION_TAX" : True
                     }
                 },
@@ -2060,6 +2083,42 @@ GODS = {
          "RIVAL" : "MAKOTHA"
         }
 
-
+TILES_CONSTANTS = {
+        #"BONUS" : {
+         #   "PRIMARY_RESOURCE" : .12,
+         #   "SECONDARY_RESOURCE" : .04
+        "MOUNTAINS" : {
+            "PRIMARY_RESOURCE" : "MINERALS",
+            "SECONDARY_RESOURCE" : "ENTERTAINMENT"
+            },
+        "FORESTS" : {
+            "PRIMARY_RESOURCE" : "LUMBER",
+            "SECONDARY_RESOURCE" : "LIVESTOCK"
+            },
+        "GRASSLANDS" : {
+            "PRIMARY_RESOURCE" : "LIVESTOCK",
+            "SECONDARY_RESOURCE" : "LUMBER"
+            },
+        "PLAINS" : {
+            "PRIMARY_RESOURCE" : "CROPS",
+            "SECONDARY_RESOURCE" : "WATER"
+            },
+        "OCEAN" : {
+            "PRIMARY_RESOURCE" : "WATER",
+            "SECONDARY_RESOURCE" : "ENTERTAINMENT"
+            },
+        "DESERT" : {
+            "PRIMARY_RESOURCE" : "ENTERTAINMENT",
+            "SECONDARY_RESOURCE" : "MINERALS"
+            },
+        "RIVER" : {
+            "PRIMARY_RESOURCE" : "WATER",
+            "SECONDARY_RESOURCE" : "MINERALS"
+            },
+        "LAKE" : {
+            "PRIMARY_RESOURCE" : "WATER",
+            "SECONDARY_RESOURCE" : "CROPS"
+        }
+    }
 
 
