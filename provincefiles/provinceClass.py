@@ -2,15 +2,18 @@
 #Imports the constants
 import sys
 import random
-sys.path.append("..")
+import logging
 
+sys.path.append("..")
 from constantfiles import bonuses
+
+#Sets up logger
+logger = logging.getLogger(__name__)
 
 class Province:
     
     #The population variable is a dictionary in a dictionary in a dictionary
     def __init__(self, name, population, buildings, terrain):
-        self.counter = 0
         self.size_acres = None
         self.name = name
         self.population = population
@@ -62,7 +65,6 @@ class Province:
                 "CROPS" : 0
                 }
     
-
         self.under_construction = {
                 "POP_HOUSING" : 0,
                 "CHAPEL" : 0,
@@ -463,47 +465,55 @@ class Province:
 
         self.addBuildings()
 
-    def printInfo(self):
-        print(f"Name: {self.name}")
-        print(f"Population: {self.population_total}")
-        print("--------------------------------------------")
-        
-        print(f"Total Acres {self.total_acres}")
-        for resource in self.acres:
-            print(f"{resource} {self.acres[resource]}")
+    #Prints all variables to the logger, allows a message at the start
+    def printInfo(self, message="\n"):
+        linebreak = "--------------------------------------------\n"
 
-        print("--------------------------------------------")
+        message += linebreak + (f"Name: {self.name}\n")
+        message += (f"Population: {self.population_total}\n")
+        message += (f"Total Acres: {self.total_acres}\n")
+        message += (f"Primary Specie: {self.primary_specie}\n")
+        message += (f"Secondary Specie: {self.secondary_specie}\n")
+        message += (f"City Size: {self.size}\n")
+        message += (f"Total Build Points: {self.build_points_total}\n")
+        message += (f"Current Build Points : {self.build_points_current}\n")
+        
+        message += linebreak + (f"Acres:")
+
+        for resource in self.acres:
+            message += (f"{resource}: {self.acres[resource]}\n")
+        
+        message += linebreak + (f"Population:\n")
         
         for specie in self.population_specie:
-            print(f"{specie} {self.population_specie[specie]}")
+            message += (f"{specie}: {self.population_specie[specie]}\n")
         
-        print("--------------------------------------------")
+        message += linebreak + (f"Workers:\n")
         
         for workers in self.population_workers:
-            print(f"{workers} {self.population_workers[workers]}")
+            message += (f"{workers}: {self.population_workers[workers]}\n")
         
-        print("--------------------------------------------")
-        print("Buildings Built:")
+        message += linebreak + (f"Buildings Built:\n")
+
         for building in self.buildings:
-            print(f"{building} {self.buildings[building]}")
+            message += (f"{building}: {self.buildings[building]}\n")
         
-        print("--------------------------------------------") 
+        message += linebreak + (f"Buildings Under Construction:\n")
 
         for constructions in self.under_construction_list:
-            print(f"{constructions} {self.under_construction_list[constructions]}")
+            message += (f"{constructions}: {self.under_construction_list[constructions]}\n")
 
-        print("--------------------------------------------")
-        print("Buildings Under Construction") 
-        for building in self.under_construction:
-            print(f"{building} {self.under_construction[building]}")
-
-        print("--------------------------------------------")
-        print(self.primary_specie, self.secondary_specie)
-        print("--------------------------------------------")
-        print(self.size, self.build_points_total)
-        print("--------------------------------------------")
-        print("--------------------------------------------")
+        message += linebreak + (f"Total Buildings Under Construction:\n") 
         
+        for building in self.under_construction:
+            message += (f"{building}: {self.under_construction[building]}\n")
+
+        message += linebreak
+        logger.debug(message)
+
+    #A function that sends a debug message to the log while also attaching the name of the object that caused it
+    def printDebug(self, message):
+        logger.debug(self.name + " - " + message)
 
 if __name__ == "__main__":
     #TEST POPULATION
